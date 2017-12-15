@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:type="TaskPaneApp">
+        <Id>f5df85de-b1dc-4a5f-8ac5-2e18543453c3</Id>
+        <Version>1.0.0.0</Version>
+        <ProviderName>Microsoft</ProviderName>
+        <DefaultLocale>en-US</DefaultLocale>
+        <DisplayName DefaultValue="Boilerplate content" />
+        <Description DefaultValue="Insert boilerplate content into a Word document." />
+        <Hosts>
+            <Host Name="Document"/>
+        </Hosts>
+        <DefaultSettings>
+            <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
+        </DefaultSettings>
+        <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
