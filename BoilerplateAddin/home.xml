@@ -12,7 +12,7 @@
             <Host Name="Document"/>
         </Hosts>
         <DefaultSettings>
-            <SourceLocation DefaultValue="\\MyShare\boilerplate\home.html" />
+            <SourceLocation DefaultValue="http://jakupmichaelsen.github.io/BoilerplateAddin/home.html" />
         </DefaultSettings>
         <Permissions>ReadWriteDocument</Permissions>
     </OfficeApp>
