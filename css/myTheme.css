@@ -354,12 +354,12 @@ html.the-end .state-background {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled,
-.reveal .controls .navigate-left.enabled {
-	display: none;
-}
+/* .reveal .controls .navigate-left, */
+/* .reveal .controls .navigate-right, */
+/* .reveal .controls .navigate-right.enabled, */
+/* .reveal .controls .navigate-left.enabled { */
+/* 	display: none; */
+/* } */
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
