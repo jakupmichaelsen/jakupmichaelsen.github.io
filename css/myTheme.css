@@ -354,8 +354,29 @@ html.the-end .state-background {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-.reveal .controls {
-  color: #42affa; 
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled,
+.reveal .controls .navigate-left.enabled {
+	display: none;
+}
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+	border-bottom-color: silver; 
+}
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+	border-top-color: silver; 
+}
+
+.reveal .controls .navigate-up.enabled:hover {
+	border-bottom-color: black; 
+}
+
+.reveal .controls .navigate-down.enabled:hover {
+	border-top-color: black; 
 }
 
 /*********************************************
