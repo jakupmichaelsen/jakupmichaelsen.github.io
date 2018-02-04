@@ -358,7 +358,7 @@ html.the-end .state-background {
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled,
 .reveal .controls .navigate-left.enabled {
-	display: none;
+	/* display: none; */
 }
 
 .reveal .controls .navigate-up,
