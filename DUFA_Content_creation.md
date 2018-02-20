@@ -11,6 +11,7 @@
 > The final project for our Digital Literacy theme, will be a group competition in which you will create digital media on some of the things you have learned, targeted toward a selected real audience.  
 
 ---
+
 <!-- .slide: data-transition="none" -->
 
 ## 🏆 Social media engagement
@@ -22,6 +23,7 @@ Each project is to be shared on social media, with each group competing for **so
 The group with the highest engagement wins <del>cinema ticket vouchers for Bio Silkeborg</del> <ins>a drink and snack each, on me, from the cafeteria</ins>!
 
 ---
+
 <!-- .slide: data-transition="none" -->
 
 ## 🏆 Social media engagement
