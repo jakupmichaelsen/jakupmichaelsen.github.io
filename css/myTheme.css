@@ -61,6 +61,12 @@ body {
 	font-family: "Alfa Slab One"; 
 }
 
+#Courier {
+	font-family: "Courier New"; 
+	text-align: left; 
+	margin-left: 200px;
+}
+
 #left {
 	text-align: left;
 	float: left;
@@ -201,50 +207,49 @@ html.the-end .state-background {
 	margin-left: 80px; 
 }
 
+
 .reveal blockquote {
-	text-align: center;
-	font-family: "Tw Cen MT", Helvetica, sans-serif;
-	font-size: 0.85em;
-	width: 90%;
-	margin: auto;
-	padding-top: 5px;
-	background: rgba(192, 192, 192, 0.5);
+	background: khaki; 
+	font-family: Rockwell; 
+	font-size: 0.8em;
+	text-align: left;
+	margin-left: 40px; 
+	margin-right: 40px; 
+	padding: 10px 10px 10px 40px;
+	border-left: 15px solid darkKhaki;
 }
 
-.reveal blockquote p:first-child,
-.reveal blockquote p:last-child {
-	text-align: center;
-	display: inline-block; 
+.reveal blockquote:before {
+	color: darkKhaki;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	vertical-align: -0.4em;
+}
+.reveal blockquote p {
+	display: inline;
 }
 
-
-.reveal pre {
+.reveal pre { /* both tab and ``` */
 	display: block;
 	position: relative;
-	width: 90%;
-	margin: 20px auto;
-	text-align: center;
+	width: 80%;
+	background: Cornsilk;
+	padding-left: 200px; 
+	text-align: left;
 	font-size: 0.55em;
 	font-family: "Rockwell", monospace;
-	line-height: 1.2em;
+	line-height: 1.4em;
 	word-wrap: break-word;
-	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); 
 }
 
-.reveal code {
-	font-family: "Rockwell", monospace; 
-	/* background-color: Gold; */
-}
 
-.reveal pre code {
-	font-family: "Rockwell", monospace; 
-	background: rgba(5, 5, 5, 0.1);
-	display: block;
-	overflow: auto;
-	word-wrap: normal; 
+.reveal code { /* `inline` */
+	background: Cornsilk;
 }
 
 .reveal hr { 
+	font-style: italic; 
 	border: 0; 
 	border-bottom: 4px dashed silver;    
 	margin-bottom: 0.25em; 
@@ -265,7 +270,7 @@ html.the-end .state-background {
 .reveal table td {
 	text-align: left;
 	padding: 0.2em 0.5em 0.2em 0.5em;
-	border-bottom: 1px solid; 
+	border-bottom: 0px solid; 
 }
 
 .reveal table th[align="center"],
