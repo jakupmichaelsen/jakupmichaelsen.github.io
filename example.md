@@ -2,7 +2,6 @@
 
 # Job, Joris & Marieke: "A Single Life" (2014)
 
-↓↓↓
 
 <!-- .slide: data-background-color="black" data-background-transition="zoom" data-transition-speed="fast" -->
 
