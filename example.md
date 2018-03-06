@@ -2,24 +2,15 @@
 
 # Job, Joris & Marieke: "A Single Life" (2014)
 
+---
 
 <!-- .slide: data-background-color="black" data-background-transition="zoom" data-transition-speed="fast" -->
 
 > What are the different stages of life?
 
-Note: Put your students into pairs and give them 1 minute to come up with as many stages of life as they can.
-
-
-
-jkæljæl
-
-
-jlkjæjælæ
-
-
+Note: *Put your students into pairs and give them 1 minute to come up with as many stages of life as they can*
 
 ---
-
 
 
 <!-- .slide: data-background-color="orange" data-background-transition="zoom" data-transition-speed="fast" -->
@@ -34,8 +25,9 @@ jlkjæjælæ
                             old age 
                                     death
 ```
-Note: Elicit or explain the following stages of life:
+Note: **Elicit or explain the following stages of life:**
 
+---
 
 In small groups, discuss the following questions:
 
