@@ -32,16 +32,17 @@ Note: **Elicit or explain the following stages of life:**
 In small groups, discuss the following questions:
 
 - What emotions do you associate with each stage of life?
-- What are the advantages and disadvantages of the following stages of life: 
-childhood; adolescence; adulthood; parenthood; and old age? 
+- What are the advantages and disadvantages of the following stages of life: childhood; adolescence; adulthood; parenthood; and old age? 
 
 Note: Hold a plenary session designed around the questions 
 
+---
 
 You are going to watch a short film about the different stages of life. As you watch, you should try to identify the different stages and also identify the objects which represent each stage.
 
 Note: Show the film twice and then get students to compare their responses. Show the film a third time. This time pause at each stage of life and ask students to identify it and the objects which represent it.
 
+---
 
 In pairs, discuss the following questions:
 
@@ -51,6 +52,7 @@ In pairs, discuss the following questions:
  
 Note: Hold a plenary discussion based on the questions form the previous stage.
 
+---
 
 # Homework
 
