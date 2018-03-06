@@ -2,7 +2,6 @@
 
 # Job, Joris & Marieke: "A Single Life" (2014)
 
----
 
 <!-- .slide: data-background-color="black" data-background-transition="zoom" data-transition-speed="fast" -->
 
@@ -10,7 +9,6 @@
 
 Note: Put your students into pairs and give them 1 minute to come up with as many stages of life as they can.
 
----
 <!-- .slide: data-background-color="orange" data-background-transition="zoom" data-transition-speed="fast" -->
 
 ``` 
@@ -25,7 +23,6 @@ Note: Put your students into pairs and give them 1 minute to come up with as man
 ```
 Note: Elicit or explain the following stages of life:
 
----
 
 In small groups, discuss the following questions:
 
@@ -36,13 +33,11 @@ childhood; adolescence; adulthood; parenthood; and old age?
 
 Note: Hold a plenary session designed around the questions 
 
----
 
 You are going to watch a short film about the different stages of life. As you watch, you should try to identify the different stages and also identify the objects which represent each stage.
 
 Note: Show the film twice and then get students to compare their responses. Show the film a third time. This time pause at each stage of life and ask students to identify it and the objects which represent it.
 
----
 
 In pairs, discuss the following questions:
 
@@ -52,7 +47,6 @@ In pairs, discuss the following questions:
  
 Note: Hold a plenary discussion based on the questions form the previous stage.
 
----
 
 # Homework
 
