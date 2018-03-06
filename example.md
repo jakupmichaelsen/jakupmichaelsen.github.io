@@ -1,9 +1,3 @@
----
-author: John Doe
-title: Demo Slide
-date: June 21, 2017
----
-
 <!-- .slide: data-background-color="black" data-background-transition="zoom" data-transition-speed="fast" -->
 
 # Job, Joris & Marieke: "A Single Life" (2014)
