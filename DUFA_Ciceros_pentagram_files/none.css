@@ -1,0 +1,79 @@
+/*
+
+Based on Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #dcdcdc;
+}
+
+.hljs-template-tag {
+  color: #dcdcdc;
+}
+
+.hljs-number {
+  color: #dcdcdc;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #dcdcdc;
+}
+
+.hljs-literal {
+  color: #dcdcdc;
+}
+
+.hljs-subst {
+  color: #dcdcdc;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #dcdcdc;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dcdcdc;
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #dcdcdc;
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #dcdcdc;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
