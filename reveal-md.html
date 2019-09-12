@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost:1948/todaysClass.md#/3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal-md</title>
+    <link rel="stylesheet" href="./reveal-md_files/reveal.css">
+    <link rel="stylesheet" href="./reveal-md_files/white.css" id="theme">
+    <link rel="stylesheet" href="./reveal-md_files/none.css">
+    <link rel="stylesheet" href="./reveal-md_files/paper.css" type="text/css" media="print">
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script><script src="./reveal-md_files/livereload.js.download"></script><script type="text/javascript" src="./reveal-md_files/marked.js.download"></script><script type="text/javascript" src="./reveal-md_files/markdown.js.download"></script><script type="text/javascript" src="./reveal-md_files/highlight.js.download"></script><script type="text/javascript" src="./reveal-md_files/zoom.js.download"></script><script type="text/javascript" src="./reveal-md_files/notes.js.download"></script><script type="text/javascript" src="./reveal-md_files/math.js.download"></script>
+  <style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style><script type="text/javascript" src="./reveal-md_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.0') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.0') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.0') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body style="transition: -webkit-transform 0.8s ease 0s;"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <div class="reveal center has-vertical-slides has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="slide" style="">
+      <div class="slides" style="width: 1536px; height: 679.68px;"><section data-markdown="" data-markdown-parsed="true" data-background-color="blue" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" class="past" style="top: 247.86px; display: none;" hidden="" aria-hidden="true"><!-- -->
+
+<h1 id="todays-class">Today's class</h1>
+</section><section data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: block;" hidden="" aria-hidden="true"><h2 id="genitiv">Genitiv</h2>
+<blockquote>
+<p>I grupper skal I lave en planche om følgende genetiv-emner</p>
+</blockquote>
+<div class="flex-container">
+  <div>
+    Apostrof-genitiv
+  </div>
+  <div>
+    Of-genitiv
+  </div>
+  <div> Possessive pronominer 
+  </div>
+  <div>
+  </div>
+</div>
+
+<p>ℹ Del emnerne imellem jer, læs op på dem, og lave én fælles whiteboard-plance</p>
+<hr>
+<iframe (⌛="30)" data-src="https://www.youtube.com/embed/t3awZdo0rMo?autoplay=0&amp;enablejsapi=1" src="./reveal-md_files/saved_resource.html"></iframe> 
+
+</section><section data-markdown="" data-markdown-parsed="true" class="past" style="top: 22.84px; display: block;" hidden="" aria-hidden="true"><p><img src="./reveal-md_files/screenshots_chrome_2019-09-11_12-33-56.png" alt="chrome_2019-09-11_12-33-56.png"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="present" style="top: 39.84px; display: block;"><h1 id="literary-analysis">Literary analysis</h1>
+<blockquote>
+<p>The main goal of literary analysis is the appreciation of artistic craftsmanship. Looking at specific literary elements, you can analyze how an author explores some universal themes of the human experience. </p>
+</blockquote>
+<p class="fragment" data-fragment-index="0">For this assignment, you will analyze how setting and characterization are used to construct the theme(s) of a short story. <!-- --></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 137.84px; display: block;"><h3 id="theme">Theme</h3>
+<blockquote>
+<p>Themes are a huge part of what readers ultimately take away from a work of literature when they're done reading it. They're the universal lessons and ideas that we draw from our experiences of works of art.</p>
+</blockquote>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 29.84px; display: block;"><h3 id="characterization">Characterization</h3>
+<blockquote>
+<p>Characterization refers to the creation or construction of a fictional character. In explicit characterization, the author uses a narrator or the characters themselves to tell  readers what a character is like.  In implicit characterization, readers must infer for themselves what the character is like through the character's thoughts, actions, language, physical appearance, and interaction with other characters.</p>
+</blockquote>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="setting">Setting</h3>
+<blockquote>
+<p>Setting refers to the time and place of a story and includes the atmosphere of specific locations, immediate and general social environments, as well as the time period and time span of the story. </p>
+</blockquote>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h5 id="rewrite-these-definitions-into-questions">Rewrite these definitions into questions</h5>
+<div class="flex-container">
+  <div>Themes are a huge part of what readers ultimately take away from a work of literature when they're done reading it. They're the universal lessons and ideas that we draw from our experiences of works of art.</div>
+  <div>Characterization refers to the creation or construction of a fictional character. In explicit characterization, the author uses a narrator or the characters themselves to tell  readers what a character is like.  In implicit characterization, readers must infer for themselves what the character is like through the character's thoughts, actions, language, physical appearance, and interaction with other characters.</div>
+  <div>Setting refers to the time and place of a story and includes the atmosphere of specific locations, immediate and general social environments, as well as the time period and time span of the story. </div>
+</div>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="billy-collins-on-turning-ten-2002">Billy Collins: “On Turning Ten” (2002)</h1>
+</section><section data-markdown="" data-markdown-parsed="true" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><!-- -->
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>How does the poem make you reﬂect on your own life and childhood?</p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>What does the poem say about growing up? Do you agree?</p>
+<iframe data-src="https://www.youtube.com/embed/x6ggW8ei0yU?autoplay=1&amp;enablejsapi=1" src="./reveal-md_files/saved_resource(1).html"></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>Discuss what it means to be mature and what it means to be old. </p>
+<iframe data-src="https://www.youtube.com/embed/x6ggW8ei0yU?autoplay=1&amp;enablejsapi=1" src="./reveal-md_files/saved_resource(2).html"></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>What do ten-year-olds worry about? How does the perspective change as you grow older?</p>
+<iframe data-src="https://www.youtube.com/embed/x6ggW8ei0yU?autoplay=1&amp;enablejsapi=1" src="./reveal-md_files/saved_resource(3).html"></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="substantivers-flertal">Substantivers flertal</h1>
+</section><section data-markdown="" data-markdown-parsed="true" data-background-color="#E8F0F3" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" class="has-light-background future" hidden="" aria-hidden="true" style="top: 363.36px; display: none;"><!-- -->
+
+
+<p><img src="./reveal-md_files/screenshots_ENGRAM.png" alt="ENGRAM.png"></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="🗔-🙋-🗖-🗗">🗔 🙋 🗖 🗗</h1>
+<h1 id="🗔🗣️🎓🚸🖵👨🏫">🗔🗣️🎓🚸🖵👨‍🏫</h1>
+<h1 id="🖵💁✋📊💁🎓">🖵💁✋📊💁🎓</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="ordstilling">Ordstilling</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p><a href="https://player.vimeo.com/video/128970546" data-preview-link="">Vimeo</a></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><div id="left">
+
+<h2 id="1----element-styletext-align-center----" style="text-align: center; }">1 <!-- --></h2>
+<p><img src="./reveal-md_files/wTRLMld.png" alt="imgur"></p>
+</div>
+
+<div id="right">
+
+<h2 id="2----element-styletext-align-center----" style="text-align: center; }">2 <!-- --></h2>
+<p><img src="./reveal-md_files/3Pm4SdR.png" alt="imgur"></p>
+</div>
+
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="on-turning-ten">On Turning Ten</h1>
+</section><section data-markdown="" data-markdown-parsed="true" data-background-color="black" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><!-- -->
+
+
+<p><img src="./reveal-md_files/jYQbAEw.png" alt="imgur"></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="on-turning-ten">On Turning Ten</h1>
+<ol>
+<li>Read &amp; translate (verbally)</li>
+<li>Use <code>ordbogen.gyldendal.dk</code> </li>
+</ol>
+<h2 id="group-work">Group work</h2>
+<ul>
+<li>9 groups </li>
+<li>Answer questions (in writing)</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h2 id="matrix-groups">Matrix groups</h2>
+<ul>
+<li>9 questions </li>
+<li>Discussion </li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="stack future" style="top: 363.36px; display: none;"><section data-markdown="" style="top: 363.36px; display: none;">
+    <script type="text/template">
+        ## Page title
+
+<pre><code>    &lt;div&gt;
+        A div with some text and a [link](http://hakim.se).
+    &lt;/div&gt;
+&lt;/script&gt;</code></pre></section>
+</script></section></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="stack future" style="top: 363.36px; display: none;"><div id="left">
+![imgur](https://i.imgur.com/3Pm4SdR.png)
+<!-- -->
+</div>
+
+<div id="right">
+
+<section data-markdown="" style="top: 363.36px; display: none;">
+![](https://i.imgur.com/wTRLMld.png)
+</section>
+
+</div></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="💯-💪-🎉">💯 💪 🎉</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>Testing</p>
+<div class="spreadsheet" data-rows="5" data-cols="4">
+  1,=A1,3
+  4,5,6
+</div>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><ul>
+<li>Define WW1 </li>
+<li>What role did the British Empire play in the war (basic summary of facts)? </li>
+<li>In your own words, summarize the 4 M.A.I.N. reasons for WW1 </li>
+</ul>
+<p><strong>Bonus</strong><br>Discuss the following quote:  </p>
+<blockquote>
+<p>The almost laughable rationalization of British imperial power as necessary or civilizing, didn't translate to German imperialism, which was aggressive and expansionist. </p>
+</blockquote>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>13) How dare you!<br>14) She came in through the bathroom window.<br>15) I woke up at the first glimmer of dawn.  </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>17) Etienne gazed at the map for five minutes.<br>18) It doesn't move.<br>19) The boss will call tomorrow.  </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>20) An Australian won for the first time.<br>21) The rug has been pulled from under his feet.<br>22) You'll never win.  </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>23) He had been fishing in Sutherland.<br>24) Not a single bird sings in the dry, hollow trees.<br>25) The Torbay Flower Festival runs from August 23 to 26 on Paignton Green.<br>26) Is Richard coming tonight?  </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h2 id="ut-enim-ad-minim-veniam-quis-nostrud-exercitationullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat" class="fragment" data-fragment-index="0">Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+<!-- --> - Testing **bold** 
+
+<!-- --> - Testing *italic* 
+
+<!-- --> - Testing `code` 
+
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h2 id="ut-enim-ad-minim-veniam-quis-nostrud-exercitationullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat">Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+<ul>
+<li>Testing <strong class="fragment" data-fragment-index="0">bold</strong> <!-- --></li>
+<li>Testing <em class="fragment" data-fragment-index="1">italic</em> <!-- --></li>
+<li>Testing <code class="fragment" data-fragment-index="2">code</code> <!-- --></li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="here">Here</h1>
+<p>However, placing the HTML comments like this seems to work around the problem:</p>
+<p data-markdown=""> Item one </p>
+
+<p data-markdown=""> Item *two*. </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><div style="float: left; width: 400px;">Left Stuff</div>
+<div style="float: left; width: 200px;">Middle Stuff</div>
+<div style="float: left;">Right Stuff</div>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>Ninja</p>
+<div style="float:left;width:{&#39;10px&#39;}">
+left
+</div>
+<div class="right" style="float:right;width:{200px}">
+right
+</div>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>The same workaround works with lists:</p>
+<ul>
+<li class="fragment" data-fragment-index="0"><!-- --> Item one.
+</li>
+<li class="fragment" data-fragment-index="1"><!-- --> Item *two*.
+<p>I hope this helps people who need it.</p>
+</li>
+</ul>
+<p></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>However, placing the HTML comments like this seems to work around the problem:  </p>
+<p class="fragment" data-fragment-index="0">Item one.  <!-- -->
+Item <em class="fragment" data-fragment-index="1">two</em>.  <!-- --></p>
+<p>testing</p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p class="fragment" data-fragment-index="0">The same workaround works with lists:</p>
+<!-- --> Item one.  
+
+<!-- --> Item *two*.  
+
+<p>I hope this helps people who need it.</p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p>Testing fragmented sentences </p>
+<p class="fragment" data-fragment-index="3">Testing 
+fragmented <!-- --> 
+sentences </p>
+<span class="fragment" data-fragment-index="2">
+  Testing 
+</span>
+<span class="fragment" data-fragment-index="0">
+  fragmented 
+</span>
+<span class="fragment" data-fragment-index="1">
+  sentences
+</span>
+
+<p><span class="fragment" data-fragment-index="4">... a</span> <span class="fragment" data-fragment-index="5">fragmented</span> <span class="fragment" data-fragment-index="6">slide.</span></p><p></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="section future" data-autoslide="2000" hidden="" aria-hidden="true" style="top: 363.36px; display: none;"><!-- -->
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. </p>
+</section><section data-markdown="" data-markdown-parsed="true" class="section future" data-autoslide="1000" hidden="" aria-hidden="true" style="top: 363.36px; display: none;"><!-- -->
+
+<p>Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="stack future" style="top: 363.36px; display: none;"><section style="top: 363.36px; display: none;">
+  <p class="fragment grow" data-fragment-index="0">grow</p>
+  <p class="fragment shrink" data-fragment-index="1">shrink</p>
+  <p class="fragment fade-out" data-fragment-index="2">fade-out</p>
+  <p class="fragment fade-up" data-fragment-index="3">fade-up (also down, left and right!)</p>
+  <p class="fragment fade-in-then-out" data-fragment-index="4">fades in, then out when we move to the next step</p>
+  <p class="fragment fade-in-then-semi-out" data-fragment-index="5">fades in, then obfuscate when we move to the next step</p>
+  <p class="fragment highlight-current-blue" data-fragment-index="6">blue only once</p>
+  <p class="fragment highlight-red" data-fragment-index="7">highlight-red</p>
+  <p class="fragment highlight-green" data-fragment-index="8">highlight-green</p>
+  <p class="fragment highlight-blue" data-fragment-index="9">highlight-blue</p>
+</section>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-iswas-the-royal-colonial-institute">What is/was "the Royal Colonial Institute"?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-is-a-british-protectorate">What is a "British protectorate"?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-are-chamberlains-views-on-the-english-and-on-whiteblack-colonies">What are Chamberlain's views on the English and on white/black colonies?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-is-pax-britannica">What is Pax Britannica?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-does-greater-britain-refer-to">What does "Greater Britain" refer to?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="whats-the-deal-with-the-eggs">What's the deal with the eggs?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="what-are-the-three-stages-of-the-british-empire-according-to-chamberlain">What are the three stages of the British Empire, according to Chamberlain?</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><ol>
+<li>Add a heading for each paragraph  </li>
+<li>What is/was "the Royal Colonial Institute"?  </li>
+<li>What is a "British protectorate"?  </li>
+<li>What are Chamberlain's views on the English and on white/black colonies?  </li>
+<li>What is Pax Britannica?  </li>
+<li>What does "Greater Britain" refer to?  </li>
+<li>What's the deal with the eggs?   </li>
+<li>What are the three stages of the British Empire, according to Chamberlain?  </li>
+</ol>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="free-writing">Free writing</h1>
+<h3 id="in-chamberlains-conception-there-are-three-stages-of-the-british-empire">In Chamberlain's conception, there are three stages of the British Empire:</h3>
+<iframe data-src="https://www.youtube.com/embed/mm8_pEtm35M?autoplay=0&amp;enablejsapi=1" src="./reveal-md_files/saved_resource(4).html"></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="free-writing-the-vessel">Free writing: The Vessel</h1>
+<p>Write about a ship or other vehicle that can take you somewhere different from where you are now - as well as the journey itself. </p>
+<p>Word count: 300 (± 10%)<br>Spend 1 hour at home writing. You will finish it during class on Thursday.  </p>
+<p>The assignment must be submitted in OneNote</p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="kongruensfejl">Kongruensfejl</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><p><img src="./reveal-md_files/logo_blue.png" alt="Mentimeter"></p>
+<p><img src="./reveal-md_files/screenshots_mmCode.png" alt="Code"></p>
+</section><section data-markdown="" data-markdown-parsed="true" data-background-iframe="https://www.mentimeter.com/s/d8ffd2121c005a367b3ed4a6de1c44b6/3ec38e8ca7f0" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><!-- -->
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="kahoot">Kahoot:</h3>
+<p><a href="http://www.kahoot.it/">www.kahoot.it</a> </p>
+<h1 id="game-pin-74716">Game PIN: 74716</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="devils-advocate">Devil's advocate</h1>
+<p><img src="./reveal-md_files/1CUcgkY.png" alt="Definition" class="fragment" data-fragment-index="0"> <!-- --></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><blockquote>
+<p>The person on the left is devil's advocate</p>
+</blockquote>
+<h1 id="greed-is-at-the-root-of-all-evil">Greed is at the root of all evil</h1>
+<aside class="notes"><h5 id="random-pairs">Random pairs</h5>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><blockquote>
+<p>The person on the left is devil's advocate</p>
+</blockquote>
+<h2 id="in-order-to-improve-the-danish-welfare-system-we-should-pay-higher-taxes">In order to improve the Danish welfare system, we should pay <strong>higher</strong> taxes</h2>
+<aside class="notes"><h5 id="random-pairs">Random pairs</h5>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><blockquote>
+<p>The person on the left is devil's advocate</p>
+</blockquote>
+<h2 id="revenge-is-never-justified">Revenge is never justified</h2>
+<aside class="notes"><h5 id="random-pairs">Random pairs</h5>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="parts-of-speech">Parts of speech</h1>
+<p>In random pairs, take turns defining the following parts of speech: </p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><ol>
+<li>Noun</li>
+<li>Verb</li>
+<li>Adjective</li>
+<li>Adverb</li>
+<li>Preposition</li>
+<li>Pronoun</li>
+<li>Numeral</li>
+<li>Article </li>
+<li>Proper noun</li>
+<li>Conjunction </li>
+</ol>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h1 id="sætningsanalyse-1">Sætningsanalyse 1</h1>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="13-how-dare-you">13) How dare you!</h3>
+<aside class="notes"><pre><code class="hljs gherkin">   ______________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+1 A:adv      P:v        S:pron     
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  How        dare       you   
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="14-she-came-in-through-the-bathroom-window">14) She came in through the bathroom window.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                           
+1 S:pron     P:v        A:adv      A:g                                         
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                              
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">______________________          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:art      D:n        H:n        
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  She        came       in         through    the        bathroom   window   
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="15-i-woke-up-at-the-first-glimmer-of-dawn">15) I woke up at the first glimmer of dawn.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                                                 
+1 S:pron     P:v        A:adv      A:g                                                               
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                                      
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                                      
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                                                    
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">______________________                                
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:art      D:num      H:g                              
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:n        D:g                   
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          
+5 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+5 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:n        
+5 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  I          woke       up         at         the        first      glimmer    of         dawn
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="17-etienne-gazed-at-the-map-for-five-minutes">17) Etienne gazed at the map for five minutes.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _______________________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+1 S:n        P:v        A:g                              A:g                              
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                   H:prp      D:g                   
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:art      H:n        </span></span>|<span class="hljs-string"><span class="hljs-string">          D:num      H:n        
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  Etienne    gazed      at         the        map        for        five       minutes    
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="18-it-doesnt-move">18) It doesn't move.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+1 S:pron     P:g-       A:adv      -P:g       
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_         </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_         
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          D:v        </span></span>|<span class="hljs-string"><span class="hljs-string">          H:v        
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  It         does       n't        move    
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="19-the-boss-will-call-tomorrow">19) The boss will call tomorrow.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  ____________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          
+1 S:g                   P:g                   A:adv      
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 D:art      H:n        D:v        H:v        </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  The        boss       will       call       tomorrow   
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="20-an-australian-won-for-the-first-time">20) An Australian won for the first time.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                           
+1 S:g                   P:v        A:g                                         
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+2 D:art      H:n        </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                              
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">______________________          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:art      D:num      H:n        
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  An         Australian won        for        the        first      time       
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="21-the-rug-has-been-pulled-from-under-his-feet">21) The rug has been pulled from under his feet.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _______________________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">                                           
+1 S:g                   P:g                              A:g                                         
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">______________________          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+2 D:art      H:n        D:v        D:v        H:v        H:prp      D:g                              
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                   
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:pron     H:n        
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  The        rug        has        been       pulled     from       under      his        feet  
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="22-youll-never-win">22) You'll never win.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+1 S:pron     P:g-       A:adv      -P:g       
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_         </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_         
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          D:v        </span></span>|<span class="hljs-string"><span class="hljs-string">          H:v        
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  You        'll        never      win        
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="23-he-had-been-fishing-in-sutherland">23) He had been fishing in Sutherland.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">  ____________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">                     
+1 S:pron     P:g                              A:g                   
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">______________________          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          D:v        D:v        H:v        H:prp      D:n        
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  He         had        been       fishing    in         Sutherland 
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="24-not-a-single-bird-sings-in-the-dry-hollow-trees">24) Not a single bird sings in the dry, hollow trees.</h3>
+<aside class="notes"><pre><code class="hljs gherkin"> _______________________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">                                           </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                                      
+1 S:g                                         P:v        A:g                                                    
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">_________________________________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                           
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                           
+2 D:adv      D:art      D:adj      H:n        </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                                         
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_________________________________          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:art      D:adj      D:adj      H:n        
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  Not        a          single     bird       sings      in         the        dry        hollow     trees      
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="25-the-torbay-flower-festival-runs-from-august-23-to-26-on-paignton-green">25) The Torbay Flower Festival runs from August 23 to 26 on Paignton Green.</h3>
+<aside class="notes"><pre><code class="hljs gherkin">
+  _________________________________________________________________________________________________________________________
+1 |<span class="hljs-string"><span class="hljs-string">                                           </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">                                
+1 S:g                                         P:v        A:g                              A:g                              A:g                              
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">___________                                </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                                </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     
+2 D:art      H:g                              </span></span>|<span class="hljs-string"><span class="hljs-string">          H:prp      D:g                   H:prp      D:g                   H:prp      D:g                   
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">                     </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          D:n        H:g                   </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          H:n        D:num      </span></span>|<span class="hljs-string"><span class="hljs-string">          H:0        D:num      </span></span>|<span class="hljs-string"><span class="hljs-string">          D:n        H:n        
+3 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">___________          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          D:n        H:n        </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+4 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  The        Torbay     Flower     Festival   runs       from       August     23         to         [August]   26         on         Paignton   Green   
+</span></span></code></pre></aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 363.36px; display: none;"><h3 id="26-is-richard-coming-tonight">26) Is Richard coming tonight?</h3>
+<aside class="notes"><pre><code class="hljs gherkin"> _________________________________
+1 |<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+1 P:g-       S:n        -P:g       A:adv      
+1 </span></span>|<span class="hljs-string"><span class="hljs-string">_         </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">_         </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 D:v        </span></span>|<span class="hljs-string"><span class="hljs-string">          H:v        </span></span>|<span class="hljs-string"><span class="hljs-string">          
+2 </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          </span></span>|<span class="hljs-string"><span class="hljs-string">          
+  Is         Richard    coming     tonight    
+</span></span></code></pre></aside></section></div>
+    <div class="backgrounds"><div class="slide-background past" data-background-hash="0bluenullnullnone-in concave-outnull" data-background-transition="none-in concave-out" data-loaded="true" style="background-color: blue; display: none;"><div class="slide-background-content"></div></div><div class="slide-background past" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background past" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-transition="none-in concave-out" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0#E8F0F3nullnullnone-in concave-outnull" data-background-transition="none-in concave-out" style="background-color: rgb(232, 240, 243); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0blacknullnullnone-in concave-outnull" data-background-transition="none-in concave-out" style="background-color: black; display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background section future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background section future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0https://www.mentimeter.com/s/d8ffd2121c005a367b3ed4a6de1c44b6/3ec38e8ca7f0nullnullnullnone-in concave-outnull" data-background-transition="none-in concave-out" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="progress" style="display: block;"><span style="width: 59.2593px;"></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button><button class="navigate-right enabled fragmented" aria-label="next slide"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Literary analysis
+
+The main goal of literary analysis is the appreciation of artistic craftsmanship. Looking at specific literary elements, you can analyze how an author explores some universal themes of the human experience. 
+
+For this assignment, you will analyze how setting and characterization are used to construct the theme(s) of a short story. 
+</div></div>
+
+    <script src="./reveal-md_files/reveal.js.download"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '/plugin/zoom-js/zoom.js', async: true },
+        { src: '/plugin/notes/notes.js', async: true },
+        { src: '/plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"reveal","transitionSpeed":"default","backgroundTransition":"slide","center":true,"controls":true,"progress":true,"width":"100%","height":"100%"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, monospace;"></div></div></body></html>
