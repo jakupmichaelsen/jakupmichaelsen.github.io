@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/cooper.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># #laerer_hacks 
+
+#laerer_hacks <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->
+
+##### Øg Egen Ydeevne: Udbytterig udnyttelse af informationsteknologisk egnethed og adræt anvendelse af alskens ubrugte tastatur tricks m.m. <!-- .element: class="fragment" data-animate="animated slideInLeft faster" -->
+
+> Lorem ipsum dolor sit amet, consectetur adip
+</script></section><section  data-markdown><script type="text/template">
+<section data-background="linear-gradient(90deg, black 50%, white 50%)" style="color: orangered;">
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velitesse cillum dolore eu fugiat nulla pariatur. Excepteursint occaecat cupidatat non proident, sunt in culpa quiofficia deserunt mollit anim id est laborum. 
+
+</script></section><section  data-markdown><script type="text/template">
+Testing <!-- .element: style="color: white; background: linear-gradient(90deg, black 30%, white 30%); display: block" -->
+
+In the **house**!
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-image="https://imgur.com/QYSWJII.png" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast" -->
+
+<div>
+
+Testing <!-- .element: style="color: white" -->
+
+</script></section><section  data-markdown><script type="text/template">
+<section data-background="black">
+
+<!-- .slide: data-background-image="https://via.placeholder.com/300/09f/fff.png" data-transition="slide-in fade-out" data-background-transition="none-in concave-out" data-transition-speed="fast"  data-background-position="center" data-background-size="contain" -->
+
+Testing 
+
+<div class="columns">
+
+- Test <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->
+- Test <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->
+- Test <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->
+
+![](https://via.placeholder.com/800/fff/000.png) <!-- .element: style="text-align: right; background: black; color: white" --> 
+</script></section><section  data-markdown><script type="text/template">
+<img src="https://via.placeholder.com/300/09f/fff.png" align="right">
+</script></section><section  data-markdown><script type="text/template">
+<section data-background="black">
+<div class="columns">
+
+> Testing <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->  
+
+> Testing <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->  
+
+> Testing <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->  
+> testing <!-- .element: class="fragment" data-animate="animated lightSpeedIn" -->  
+</script></section><section  data-markdown><script type="text/template">
+## Testing 
+test <!-- .element: style="text-align: center" --> 
+
+<div class="columns">
+
+<div class="fragment" data-animate="animated lightSpeedIn">
+
+> <i class="fas fa-quote-right"></i> Tastaturet er din schweizerkniv - jakupmichaelsen  
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.  
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.  
+
+</div>
+
+> <i class="fas fa-quote-right"></i> Tastaturet er din schweizerkniv - jakupmichaelsen  
+
+</div>
+
+test <!-- .element: style="text-align: center" --> 
+</script></section><section  data-markdown><script type="text/template">
+
+</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"reveal","transitionSpeed":"default","backgroundTransition":"slide","center":true,"controls":true,"progress":true,"width":"100%","height":"100%"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
