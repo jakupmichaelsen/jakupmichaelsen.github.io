@@ -1,0 +1,11 @@
+ Volume in drive D is Ny diskenhed
+ Volume Serial Number is 2400-FE1A
+
+ Directory of D:\GitHub\jakupmichaelsen.github.io\eksamensopgaver
+
+[ny-1stx-ENG-A-20052019]           [ny-2stx191-ENG-B-27052019]
+[ny-1stx191-ENG-B-22052019]        [ny_stx192_ENGB_20082019-2_182177]
+[ny_stx192_ENGA_20082019-2_182175] [..]
+[.]                                list.txt
+               1 File(s)              0 bytes
+               7 Dir(s)  35.099.099.136 bytes free
