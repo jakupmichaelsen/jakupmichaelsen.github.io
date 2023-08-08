@@ -1,0 +1,626 @@
+<!DOCTYPE html><html>
+                <head><title>2stx231-ENG/A-25052023</title>
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" href="./css/general-web-theme.css">
+                    <link rel="stylesheet" type="text/css" href="./css/proeveelement-digital-proeve-theme.css"><script src="./assets/videoplayer/js/jquery.js"></script><script src="./assets/videoplayer/js/jquery-ui.js"></script><script src="./assets/videoplayer/js/video-player.js"></script><link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/video-player.css"><link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/jquery-ui.css"><script type="text/javascript">var subtitles = {T_6677: {
+lang: "en",
+name: "English",
+tracks: [
+T(TTime("00:00:00.000:00"), TTime("00:00:03.000:00"), "Kun tekst, der er relevant for opgavebesvarelsen, er tekstet til talesyntese.")
+]
+}, T_9447: {
+lang: "en",
+name: "English",
+tracks: [
+T(TTime("00:00:00.000:00"), TTime("00:00:02.640:00"), "Kun tekst, der er relevant for opgavebesvarelsen, er tekstet til talesyntese."),
+T(TTime("00:00:02.640:00"), TTime("00:00:08.280:00"), "The Coronation. BBC One. 8pm, Sunday 14 January. BBC NEWS.")
+]
+}};
+
+                function UndefinedToZero(value) {
+                    if(typeof value === "undefined") {
+                        return 0;
+                    }
+                    return value;
+                }
+
+                function _Time(frames, seconds, minutes, hours) {
+                    frames = UndefinedToZero(frames) / 24;
+                    seconds = UndefinedToZero(seconds);
+                    minutes = UndefinedToZero(minutes) * 60;
+                    hours = UndefinedToZero(hours) * 3600;
+                    return hours + minutes + seconds + frames;
+                }
+
+                function TTime(value) {
+                    if(typeof value === "undefined") {
+                        value = "00:00:00:00";
+                    }
+                    var split = value.split(":");
+                    var frames = (split[3]*1)/24;
+                    var seconds = split[2]*1;
+                    var minutes = (split[1]*1)*60;
+                    var hours = (split[0]*1)*3600;
+                    var output = hours + minutes + seconds + frames;
+                    return output;
+                }
+
+                function T(start, end, text, direction) {
+                    if(typeof direction === "undefined") {
+                        direction = "ltr";
+                    }
+                    return {
+                        start: start,
+                        end: end,
+                        text: text,
+                        direction: direction
+                    }
+                }</script></head>
+                <body>
+                <style>
+                    a:hover {
+                        cursor: pointer;
+                    } 
+
+                    .content-editable {
+                        position: relative; 
+                    }
+
+                    .draggable-reading-field {
+                        display: inline-block; 
+                        position: absolute; 
+                        z-index: 9; 
+                        border: 1px solid gray;
+                        padding: 2px;
+                    }
+
+                    .draggable-reading-field-invisible {
+                        opacity: 0 !important;
+                        border-style: none;
+                    }
+
+                    .line-numbers-container {
+                        resize: none !important;
+                        border: none !important;
+                        padding: 0 !important;
+                        counter-reset: line;
+                    }
+
+                    .line-numbers-container p.numbered-line {
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                    }
+
+                    .line-numbers-container p.numbered-line:before {
+                        content: counter(line);
+                        counter-increment: line;
+                        color: #888;
+                        visibility: hidden;
+                        display: inline-block;
+                        width: 20px;
+                    }
+
+                    .line-numbers-container p.numbered-line:first-child:before, 
+                    .line-numbers-container p.numbered-line:nth-child(5n):before {
+                        visibility: visible;
+                    }
+                </style>
+            <div class="skabelon">
+                <header class="skabelon-header">
+                    <div style="position: relative;" class="skabelon-header-institution_logo">
+                    <p style="position: absolute; color: transparent; top: 2%;">
+                        Studentereksamen
+                    </p></div>
+                    <img class="skabelon-header-stuk_logo" id="uvm_logo" src="assets/images/uvm_logo_stuk.png">
+                </header>
+                <div class="skabelon-wrapper">
+                    <div class="skabelon-wrapper-menu" id="skabelon-wrapper-menu">
+                        <ul><ul>
+<li><a href="javascript:void(0)" class="web-document-link active parent-document" 
+                id="web-document-link-1542" data-document-id="1542" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Forside</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3712" data-document-id="3712" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Vejledning</a><ul>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3712 noActiveRelation" 
+                id="web-document-link-5079" data-document-id="5079" data-parent-document-id="3712" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Henvisning til tekst, video- og lydklip</a></li>
+</ul></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3720" data-document-id="3720" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Template</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3714" data-document-id="3714" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 1</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3715" data-document-id="3715" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 2</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3716" data-document-id="3716" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 3</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3717" data-document-id="3717" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 4</a><ul>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3717 noActiveRelation" 
+                id="web-document-link-3718" data-document-id="3718" data-parent-document-id="3717" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 4a</a></li>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3717 noActiveRelation" 
+                id="web-document-link-3719" data-document-id="3719" data-parent-document-id="3717" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 4b</a></li>
+</ul></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3721" data-document-id="3721" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Sources</a></li>
+</ul></ul>
+                        <a id="proeveforekomst">2stx231-ENG/A-25052023</a>
+                    </div>
+                    <div class="skabelon-wrapper-content">
+                        <div class="content-editable" id="content-editable">
+                            <style>
+                                .web-document {
+                                    display: none;
+                                }
+                        
+                                .web-document-active {
+                                    display: block;
+                                }
+                            </style>
+                            <div class="web-document " id="web-document-3721">
+                                <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Sources</span></h2>
+                                <p><strong>Anvendt materiale (til brug for Copydan):</strong><br></p>
+                                <p>Cormac McCarthy. <em>All the Pretty Horses. </em>The United States: Alfred A. Knopf, 1992.</p>
+                                <p>J. Sheridan Le Fanu. “An account of some strange disturbances in Aungier Street”, 1853, <em>WikiSource</em>
+                                    website, viewed October 2022. (www.wikisource.org)</p>
+                                <p>BBC News. “The Queen's advice on wearing a crown – BBC News”. <em>YouTube</em> website, January 12, 2018,
+                                    viewed October 2022. (www.youtube.com)</p>
+                                <p>Jennifer Kerslake. “Tin Man”. <em>Harper's Bazaar</em> website. July 28, 2021, viewed October 2022.
+                                    (www.harpersbazaar.com)</p>
+                                <p><span>Jacinda Ardern</span>. <span>“Harvard Commencement Speech – Democracy, disinformation and
+                                        kindness”</span>, <em>The official website of the New Zealand Government</em>, May 27, 2022, viewed
+                                    October 2022. (www.beehive.govt.nz)</p>
+                                <p>Simon Sinek. “We Need Difficult Conversations, Simon Sinek“, <em>YouTube</em> website, February 18, 2022,
+                                    viewed October 2022. (www.youtube.com)</p>
+                      
+                            </div>
+                            <div class="web-document " id="web-document-3719">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 4B – Non-fiction</span></h2>
+                                <p><span>Write an analytical essay (900-1200 words) in which you analyse Jacinda Ardern’s “Harvard Commencement
+                                        Speech – Democracy, disinformation and kindness” and discuss how to ensure democracy and dialogue in
+                                        society.<br></span><br><span>Part of your essay must focus on how the speaker uses her own background.
+                                        In addition your essay must include an analysis of the style of writing in lines
+                                        135-148.</span><br><br><span>Your essay must include <span style="text-decoration: underline;"
+                                            data-mce-style="text-decoration: underline;"><a data-document-id="5079"  onclick="changeDocument(this);">references</a></span> </span><span>to:</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>Jacinda Ardern’s</span> speech</p>
+                                    </li>
+                                    <li>
+                                        <p>Video: “We Need Difficult Conversations, Simon Sinek“</p>
+                                    </li>
+                                </ul>
+                                <p><br><strong>Materials</strong></p>
+                                <p><span>Jacinda Ardern</span>. <a pbyg-data-href-id="11421" href="assets/Maj 2 2023 Nonfiction-11421.pdf"
+                                        target="_blank"
+                                        data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/yVuqfmJ9PYs5khCVb78y9g/document/Maj 2 2023 Nonfiction.pdf">“Harvard
+                                        Commencement Speech – Democracy, disinformation and kindness”</a>, a speech from <em>The official
+                                        website of the New Zealand Government</em>, 2022.</p>
+                                <p>“We Need Difficult Conversations, Simon Sinek“, a video from<em> YouTube</em> website, 2022.</p>
+                                <div class="new-player mceNonEditable" contenteditable="false">
+                                    <div class="new-player-video" style="width: 600px; height: 300px;"
+                                        data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                            src="assets/WeNeedDIFFICULTCONVERSATIONS_SimonSinek-6677.mp4" pbyg-data-src-id="6677"></video></div>
+                                    <div class="subtitles new-player-subtitles" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                    <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;">
+                                        <div class="new-player-title">WeNeedDIFFICULTCONVERSATIONS_SimonSinek</div>
+                                    </div>
+                                </div>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3718">
+                                <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Assignment 4A – Fiction</span></h2>
+                                <p><span>Write an analytical essay (900-1200 words) in which you analyse and interpret Jennifer Kerslake’s short
+                                        story “Tin Man”.</span><br><br><span>Part of your essay must focus on the use of contrasts in the story.
+                                        In addition your essay must include an analysis of the style of writing in lines
+                                        115-130.</span><br><br><span>Your essay must include <span style="text-decoration: underline;"
+                                            data-mce-style="text-decoration: underline;"><a data-document-id="5079"  onclick="changeDocument(this);">references</a></span> </span><span>to the short
+                                        story.</span><br><br><strong>Material</strong></p>
+                                <p>Jennifer Kerslake. <a pbyg-data-href-id="11425" href="assets/Maj 2 2023 fiktion-11425.pdf" target="_blank"
+                                        rel="noopener"
+                                        data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/81-eR6Aj3Vcnoatm2saRzw/document/Maj 2 2023 fiktion.pdf">"Tin
+                                        Man"</a>, 2021<br></p>
+                                
+                            </div>
+                            <div class="web-document " id="web-document-3717">
+                                <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Assignment 4</span></h2>
+                                <p><span>Answer 4A </span><strong>or</strong><span> 4B</span></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3716">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 3</span></h2>
+                                <p><strong>Videoen i denne opgave er lavet af BBC. <br><br>Find og skriv fra videoens lydside i alt otte
+                                        forskellige adjektiver. Find og skriv:</strong></p>
+                                <ul>
+                                    <li><strong>fem adjektiver i positiv</strong></li>
+                                    <li><strong>to adjektiver i komparativ</strong></li>
+                                    <li><strong>et adjektiv i superlativ</strong><strong></strong></li>
+                                </ul>
+                                <p><br></p>
+                                <p>“The Queen's advice on wearing a crown – BBC News”, 2018</p>
+                                <div class="new-player mceNonEditable" contenteditable="false">
+                                    <div class="new-player-video" style="width: 600px; height: 300px;"
+                                        data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                            src="assets/18853_The-Queens-advice-9447.mp4" pbyg-data-src-id="9447"></video></div>
+                                    <div class="subtitles new-player-subtitles" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                    <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                </div>
+                              
+                            </div>
+                            <div class="web-document " id="web-document-3715">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 2</span></h2>
+                                <p><strong>I tekststykket er en række ord og led understreget. Besvar opgave a., b. og c. nedenfor. Brug
+                                        relevant grammatisk terminologi. Husk </strong><span style="text-decoration: underline;"
+                                        data-mce-style="text-decoration: underline;"><strong><a data-document-id="5079"  onclick="changeDocument(this);">kildehenvisning</a></strong></span><strong>, hvis du
+                                        citerer fra en grammatikbog.</strong><strong> Skriv dine svar på dansk.</strong></p>
+                                <ol style="list-style-type: lower-alpha; font-weight: bold;"
+                                    data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                                    <p><strong>a. Seks verballed er understreget. Skriv for hvert eksempel:</strong></p>
+                                </ol>
+                                <ul>
+                                    <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                        <ul>
+                                            <li><strong>hele verballeddet</strong></li>
+                                            <li><strong>hvilken tid verballeddet står i</strong></li>
+                                            <li><strong>om verballeddet er aktiv eller passiv</strong></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ol style="list-style-type: lower-alpha; font-weight: bold;" start="2"
+                                    data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                                    <p><strong>b. Ni adjektiver og adverbier er understreget. </strong></p>
+                                </ol>
+                                <ul>
+                                    <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                        <ul>
+                                            <li><strong>Skriv for hvert eksempel, om ordet er et adjektiv eller et adverbium</strong></li>
+                                            <li><strong>Forklar for hvert eksempel, hvordan man kan afgøre ordklassen</strong></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ol style="list-style-type: lower-alpha; font-weight: bold;" start="3"
+                                    data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                                    <p><strong>c. Tre eksempler på foreløbigt subjekt er understreget. </strong></p>
+                                </ol>
+                                <ul>
+                                    <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                        <ul>
+                                            <li><strong>Skriv for hvert eksempel det egentlige
+                                                    subjekt</strong><strong></strong><strong></strong></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p><strong></strong><br></p>
+                                <p><strong>Teksten er et uddrag af en novelle.</strong></p>
+                                <table border="1" cellpadding="7" style="border-collapse: collapse; width: 100%; background-color: #ced4d9;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; background-color: #ced4d9;" data-mce-selected="1">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 99.4186%;" data-mce-style="width: 99.4186%;">
+                                                <div class="line-numbers-container">
+                                                    <p class="numbered-line">The house, to begin with, was a very old one. It <span
+                                                            style="text-decoration: underline;" data-mce-style="text-decoration: underline;">had
+                                                            been</span>, I <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">believe</span>, newly <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">fronted</span> about</p>
+                                                    <p class="numbered-line">fifty years before; but with this exception, it had nothing modern
+                                                        about it. <span
+                                                            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+                                                            data-mce-style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">[…]</span>
+                                                    </p>
+                                                    <p class="numbered-line"><span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">There</span> <span
+                                                            style="text-decoration: underline;" data-mce-style="text-decoration: underline;">had
+                                                            been</span> <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">very</span> little <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">done</span> in the way of modernising
+                                                        details; and,</p>
+                                                    <p class="numbered-line">perhaps, it was better so; for <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">there</span> was something queer and
+                                                        by-gone in the very walls</p>
+                                                    <p class="numbered-line">and ceilings – in the shape of doors and windows – in the odd
+                                                        diagonal site of the</p>
+                                                    <p class="numbered-line">chimney-pieces – in the beams and ponderous cornices – not to
+                                                        mention the singular</p>
+                                                    <p class="numbered-line">solidity of all the woodwork, from the banisters to the
+                                                        window-frames, which <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">hopelessly</span></p>
+                                                    <p class="numbered-line">defied disguise, and <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">would have</span> <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">emphatically</span> <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">proclaimed</span> their antiquity
+                                                        through any</p>
+                                                    <p class="numbered-line"><span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">conceivable</span> amount of modern
+                                                        finery and varnish. […]</p>
+                                                    <p class="numbered-line">The back bedroom, with its two queerly-placed melancholy windows,
+                                                        staring <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">vacantly</span></p>
+                                                    <p class="numbered-line">at the foot of the bed, and with the shadowy recess to be found in
+                                                        most old houses in</p>
+                                                    <p class="numbered-line">Dublin, like a large <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">ghostly</span> closet, which, from
+                                                        congeniality of temperament, <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">had </span></p>
+                                                    <p class="numbered-line"><span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">amalgamated</span> with the bedchamber,
+                                                        and dissolved the partition. At night-time, this</p>
+                                                    <p class="numbered-line">“alcove” – as our “maid” was wont to call it – had, in my eyes, a
+                                                        <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">specially</span> sinister and</p>
+                                                    <p class="numbered-line">suggestive character. Tom’s distant and <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">solitary</span> candle <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">glimmered</span> vainly into its
+                                                        darkness.</p>
+                                                    <p class="numbered-line"><em>There</em> it was always over-looking him – always itself <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">impenetrable</span>. But this was only
+                                                        part</p>
+                                                    <p class="numbered-line">of the effect. The whole room was, I can’t tell how, repulsive to
+                                                        me. <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">There</span> was, I suppose,</p>
+                                                    <p class="numbered-line">in its proportions and features, a latent discord – a certain
+                                                        mysterious and indescribable</p>
+                                                    <p class="numbered-line">relation, which jarred indistinctly upon some secret sense of the
+                                                        fitting and the safe, and</p>
+                                                    <p class="numbered-line">raised indefinable suspicions and apprehensions of the imagination.
+                                                        On the whole, as I</p>
+                                                    <p class="numbered-line">began by saying, nothing could have induced me to pass a night
+                                                        alone in it. </p>
+                                                </div>
+                                                <p data-mce-style="text-align: right; font-size: 14px;"
+                                                    style="text-align: right; font-size: 14px;">J. Sheridan Le Fanu, ”An account of some strange
+                                                    disturbances in Aungier Street”, 1853</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="web-document " id="web-document-3714">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 1</span></h2>
+                                <p><strong>Besvar både opgave a. og b. nedenfor. Brug relevant grammatisk terminologi. Husk <span
+                                            style="text-decoration: underline;"
+                                            data-mce-style="text-decoration: underline;"><a data-document-id="5079"  onclick="changeDocument(this);">kildehenvisning</a></span>, hvis du citerer fra en
+                                        grammatikbog. Skriv dine svar på dansk.</strong></p>
+                                <ol style="list-style-type: lower-alpha; font-weight: bold;"
+                                    data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                                    <p><strong>a. Find og skriv 11 forskellige pronominer fra teksten.</strong><br><br></p>
+                                    <p><strong>b. Skriv for hvert pronomen, hvilken undergruppe af pronominer det tilhører.</strong></p>
+                                </ol>
+                                <p><strong></strong><br></p>
+                                <p><strong>Teksten er et uddrag fra en roman.</strong></p>
+                                <table border="1" cellpadding="7" style="border-collapse: collapse; width: 100%; background-color: #ced4d9;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; background-color: #ced4d9;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 99.4186%;" data-mce-style="width: 99.4186%;">
+                                                <div class="line-numbers-container">
+                                                    <p class="numbered-line">He met his father in the lobby of the St Angelus and they walked up
+                                                        Chadbourne Street to</p>
+                                                    <p class="numbered-line">the Eagle Cafe and sat in a booth at the back. Some at the tables
+                                                        stopped talking when</p>
+                                                    <p class="numbered-line">they came in. A few men nodded to his father and one said his name.
+                                                    </p>
+                                                    <p class="numbered-line">The waitress called everybody doll. She took their order and
+                                                        flirted with him. His father</p>
+                                                    <p class="numbered-line">took out his cigarettes and lit one and put the pack on the table
+                                                        and put his Third Infantry</p>
+                                                    <p class="numbered-line">Zippo lighter on top of it and leaned back and smoked and looked at
+                                                        him. He told him his</p>
+                                                    <p class="numbered-line">uncle Ed Alison had gone up to the preacher after the funeral was
+                                                        said and shook his</p>
+                                                    <p class="numbered-line">hand, the two of them standing there holding onto their hats and
+                                                        leaning thirty degrees</p>
+                                                    <p class="numbered-line">into the wind like vaudeville comics while the canvas flapped and
+                                                        raged about them and</p>
+                                                    <p class="numbered-line">the funeral attendants raced over the grounds after the lawnchairs,
+                                                        and he’d leaned into</p>
+                                                    <p class="numbered-line">the preacher’s face and screamed at him that it was a good thing
+                                                        they’d held the burial</p>
+                                                    <p class="numbered-line">that morning because the way it was making up this thing could turn
+                                                        off into a real blow</p>
+                                                    <p class="numbered-line">before the day was out.</p>
+                                                </div>
+                                                <p data-mce-style="text-align: right; font-size: 14px;"
+                                                    style="text-align: right; font-size: 14px;">Cormac McCarthy, from: <em>All the Pretty
+                                                        Horses</em>, 1992</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="web-document " id="web-document-3720">
+                                <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Template</span></h2>
+                                <p><span>Hent skabelonen til besvarelsen her. </span></p>
+                                <p><span><a pbyg-data-onclick-id="11420" onclick="window.open('assets/maj 2 2023 template-11420.docx')"
+                                            class="inserted-documents">Template</a></span></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-5079">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Henvisninger til tekst, video- og
+                                        lydklip</span></h2>
+                                <div>Hvis du citerer, skal du angive kilde.<br>Alt anvendt materiale skal være engelsksproget og angives med
+                                    kildehenvisninger. Til forklaring af grammatiske opgaver kan materialerne være på dansk.<br>Du kan henvise
+                                    til dele af video- og lydklip, f.eks. ved at angive afspillerens minut- og sekundtal for henholdsvis starten
+                                    og slutningen af klippet.</div>
+                                <div><br></div>
+                                <div>
+                                    <div><br></div>
+                                    <table border="1" cellpadding="7"
+                                        style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;"
+                                        data-mce-style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 99.4224%;" data-mce-style="width: 99.4224%;">
+                                                    <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Generel skabelon for
+                                                            henvisninger til tekster</span></h2><strong>Henvisninger</strong><br><span>Du
+                                                        henviser til tekster ved </span><i>enten</i><span> 1) at angive linjenummeret eller
+                                                        minuttalsangivelsen i en fodnote </span><i>eller</i><span> ved 2) at sætte linjenummeret
+                                                        eller minuttalsangivelsen i parentes inde i din tekst:</span><br><span>Ved én linje: l.
+                                                        34</span><br><span>Ved flere linjer: ll. 35-37</span><br><span>Ved minuttalsangivelse:
+                                                        01:23-02:12</span><br><br><strong>I fodnoter angives:</strong><br><strong>Opslag i
+                                                        bog</strong><br><span>“Hvad er et ‘utælleligt ord’?”. Helle Brieghel og Dorthe Chalotte
+                                                        Hansen. </span><i>Engelsk Grundgrammatik. Questions and Answers</i><span>. Systime 2010.
+                                                        p. 47.</span><br><br><strong>Opslag i elektronisk
+                                                        opslagsværk</strong><span></span><br><span>“Utællelige substantiver”. Thomas Boesen og
+                                                        Sarah Barding. </span><i>Engram</i><span>. Minlaering 2019.
+                                                        (www.minlaering.dk)</span><br><br><strong>Artikel fra bog eller
+                                                        antologi</strong><br><span>“Post-Modernism”. Gitte Vest Barkholt and Jørgen Døssing
+                                                        Jepsen. </span><i>A Short History of Literature in English. A Handbook</i><span>.
+                                                        Systime 2010. pp. 79-93.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Tekster i opgavesættet</span></h2>
+                                    <div>Teksternes ortografi og tegnsætning følger forlæggene. Trykfejl er dog rettet.<br>Opsætningen følger
+                                        ikke nødvendigvis forlæggene. Dog følges forlægget nøje, hvor opsætningen på den ene eller anden måde
+                                        indgår i opgaven.</div>
+                                </div>
+                                <p><br></p>
+                                <p><br></p>
+                                <p><br></p>
+                            </div>
+                            <div class="web-document " id="web-document-3712">
+                                <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Vejledning til opgavesættet</span>
+                                </h2>
+                                <table border="1" data-mce-style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;"
+                                    cellpadding="7" style="border-collapse: collapse; width: 99.9366%; background-color: rgb(206, 212, 217);"
+                                    data-mce-selected="1">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 99.4224%;" data-mce-style="width: 99.4224%;">
+                                                <p><strong>Du skal besvare følgende opgaver:</strong></p>
+                                                <ul>
+                                                    <li>Assignment 1-3</li>
+                                                    <li>I assignment 4 skal du vælge <strong>enten </strong>4a <strong>eller </strong>4b</li>
+                                                </ul>
+                                                <p><strong>Tekster til assignment 4:</strong></p>
+                                                <p>4A – Fiction:</p>
+                                                <p>”Tin Man”, a short story by Jennifer Kerslake, 2021.</p>
+                                                <p><br data-mce-bogus="1"></p>
+                                                <p>4B – Non-fiction:</p>
+                                                <p>”Harvard Commencement Speech – Democracy, disinformation and kindness” a speech by Jacinda
+                                                    Ardern, 2022.</p>
+                                                <p>”We Need Difficult Conversations: Simon Sinek”, a video from <em>YouTube</em> website, 2022.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>Vejledning og skabelon til at løse opgaven</strong><span></span><br><span>Den samlede
+                                        eksaminationstid for assignment 1-4 er fem timer. Besvarelsen bedømmes som en helhed ud fra de faglige
+                                        mål for niveauet. Der lægges vægt på beherskelsen af det engelske sprog, forståelse af forlægget og
+                                        færdighed i skriftlig fremstilling på engelsk.</span><br><br><span>Det anbefales, at du skriver din
+                                        besvarelse i skabelonen, som ligger under Template i menuen til venstre. Besvarelsen afleveres i ét
+                                        dokument med opgaverne i rækkefølgen 1-4.</span></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <div id="mceResizeHandlenw" data-mce-bogus="all" class="mce-resizehandle" unselectable="true"
+                                    data-mce-style="cursor: nw-resize; margin: 0px; padding: 0px; left: 11px; top: 83px;"
+                                    style="cursor: nw-resize; margin: 0px; padding: 0px; left: 11px; top: 83px;"></div>
+                                <div id="mceResizeHandlene" data-mce-bogus="all" class="mce-resizehandle" unselectable="true"
+                                    data-mce-style="cursor: ne-resize; margin: 0px; padding: 0px; left: 698.562px; top: 83px;"
+                                    style="cursor: ne-resize; margin: 0px; padding: 0px; left: 698.562px; top: 83px;"></div>
+                                <div id="mceResizeHandlese" data-mce-bogus="all" class="mce-resizehandle" unselectable="true"
+                                    data-mce-style="cursor: se-resize; margin: 0px; padding: 0px; left: 698.562px; top: 493.667px;"
+                                    style="cursor: se-resize; margin: 0px; padding: 0px; left: 698.562px; top: 493.667px;"></div>
+                                <div id="mceResizeHandlesw" data-mce-bogus="all" class="mce-resizehandle" unselectable="true"
+                                    data-mce-style="cursor: sw-resize; margin: 0px; padding: 0px; left: 11px; top: 493.667px;"
+                                    style="cursor: sw-resize; margin: 0px; padding: 0px; left: 11px; top: 493.667px;"></div>
+                            </div>
+                            <div class="web-document frontpage-web-document web-document-active" id="web-document-1542">
+                <div class="frontpage-fields">
+                    <h1 class="frontpage-proeve-title" contenteditable="false">Engelsk A </h1>
+                    <p class="frontpage-proeve-proeveordning" contenteditable="false"></p>
+                    <p class="frontpage-dato-for-afholdelse" contenteditable="false">Torsdag den 25. maj 2023</p><p class="frontpage-proeve-start-slut-tidspunkt"contenteditable="false">Kl. 9.00-14.00</p></div><p class="optional-textfield-3"></p><p><br></p><p><br></p></div></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function resetWordCounters() {
+                    var wordCounters = document.getElementsByClassName('word-counter')
+                    Array.prototype.forEach.call(wordCounters, function(wordCounter) {
+                        wordCounter.innerHTML = 0;
+                    });
+                })();
+
+                function countWords(obj) {
+                    let res = [];
+                    let str = obj.value.replace(/[\t\n\r\.\?\!]/gm, ' ').split(' ');
+                    str.map((s) => {
+                        let trimStr = s.trim();
+                        if (trimStr.length > 0)
+                        {
+                          res.push(trimStr);
+                        }
+                    });
+                    obj.closest('.wordcount-textarea').getElementsByClassName('word-counter')[0].innerHTML = res.length;
+                }
+            </script>
+            <script>
+            function changeDocument(element) {
+              	document.querySelectorAll(".web-document").forEach(element => {
+                	if(element.classList.contains("web-document-active")) {
+                    	element.classList.remove("web-document-active");
+                    }
+                });
+            	var webDocument = document.getElementById("web-document-" + element.getAttribute("data-document-id"));
+                if (!webDocument.classList.contains("web-document-active")) {
+                	webDocument.classList.add("web-document-active");
+                }
+                this.changeActiveMenuLink(element.id);
+            }
+            
+            function changeActiveMenuLink(elementId) {
+              	document.querySelectorAll(".web-document-link").forEach(element => {
+                	if(element.classList.contains("active")) {
+                    	element.classList.remove("active");
+                    }
+                });
+                
+            	var activeElement = document.getElementById(elementId);
+                if (!activeElement.classList.contains("active")) {
+                	activeElement.classList.add("active");
+                }
+
+                var activeElementParentId = activeElement.getAttribute("data-document-id");
+                if (activeElement.hasAttribute("data-parent-document-id")) {
+                    activeElementParentId = activeElement.getAttribute("data-parent-document-id");
+                }
+
+                document.querySelectorAll(".web-document-link").forEach(document => {
+                    if(document.classList.contains("parent-document") || activeElementParentId == document.getAttribute("data-parent-document-id")) {
+                        document.classList.remove("noActiveRelation");
+                    } else {
+                        document.classList.add("noActiveRelation");
+                    }
+                });
+            }
+
+            VideoPlayer.InitPlayers('.web-document-active .new-player');
+            VideoPlayer.PauseAll();
+            </script></body></html>
