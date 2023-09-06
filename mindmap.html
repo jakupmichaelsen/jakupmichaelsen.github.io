@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.3/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/index.js"></script><script>(r => {
+                setTimeout(r);
+              })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root, jsonOptions) => {
+          const markmap = getMarkmap();
+          window.mm = markmap.Markmap.create('svg#mindmap', (getOptions || markmap.deriveOptions)(jsonOptions), root);
+        })(() => window.markmap,null,{"type":"heading","depth":0,"payload":{"lines":[0,1]},"content":"Main Claim: Wearing shoes is not natural","children":[{"type":"heading","depth":1,"payload":{"lines":[2,3]},"content":"Claim 1: Humans evolved without wearing shoes for most of their history","children":[{"type":"heading","depth":2,"payload":{"lines":[3,4]},"content":"Evidence/Reasoning: Anthropological evidence suggests that early humans and their ancestors walked barefoot or with minimal foot coverings for the vast majority of their existence.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[5,6]},"content":"Claim 2: Feet have natural adaptations for barefoot walking","children":[{"type":"heading","depth":2,"payload":{"lines":[6,7]},"content":"Evidence/Reasoning: The human foot has evolved with features like arches and padding that allow for efficient walking and running without the need for shoes.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[8,9]},"content":"Claim 3: Wearing shoes can lead to foot problems","children":[{"type":"heading","depth":2,"payload":{"lines":[9,10]},"content":"Evidence/Reasoning: Studies show that wearing shoes with inadequate support or fit can lead to conditions like bunions, corns, and ingrown toenails, which are less common in barefoot populations.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[11,12]},"content":"Claim 4: Shoes can alter natural gait patterns","children":[{"type":"heading","depth":2,"payload":{"lines":[12,13]},"content":"Evidence/Reasoning: Shoes can change the way people walk by providing artificial support and cushioning, potentially leading to muscle imbalances and gait abnormalities.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[14,15]},"content":"Claim 5: The sensation of walking barefoot has sensory and proprioceptive benefits","children":[{"type":"heading","depth":2,"payload":{"lines":[15,16]},"content":"Evidence/Reasoning: Walking barefoot allows for better sensory feedback through the soles of the feet, contributing to improved balance and coordination.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[17,18]},"content":"Claim 6: Shoes can limit foot and toe flexibility","children":[{"type":"heading","depth":2,"payload":{"lines":[18,19]},"content":"Evidence/Reasoning: Many shoes have rigid soles and toe boxes that restrict the natural movement of the foot and toes, potentially leading to discomfort and dysfunction.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[20,21]},"content":"Claim 7: Shoes are a relatively recent invention in human history","children":[{"type":"heading","depth":2,"payload":{"lines":[21,22]},"content":"Evidence/Reasoning: The earliest known shoes date back to around 10,000 years ago, while human existence spans hundreds of thousands of years, making shoes a relatively recent development.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[23,24]},"content":"Claim 8: Some cultures continue to favor barefoot lifestyles","children":[{"type":"heading","depth":2,"payload":{"lines":[24,25]},"content":"Evidence/Reasoning: In certain cultures, such as parts of Africa and Southeast Asia, it is common for people to go barefoot in their daily lives, demonstrating that a barefoot lifestyle is both practical and culturally acceptable.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[26,27]},"content":"Claim 9: Barefoot walking is advocated by some health experts","children":[{"type":"heading","depth":2,"payload":{"lines":[27,28]},"content":"Evidence/Reasoning: Some experts in podiatry and sports medicine advocate for spending more time walking and running barefoot or in minimalist footwear for improved foot health.","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[29,30]},"content":"Claim 10: Shoe design has evolved to mimic the natural foot shape","children":[{"type":"heading","depth":2,"payload":{"lines":[30,31]},"content":"Evidence/Reasoning: Some shoe manufacturers produce &quot;minimalist&quot; or &quot;barefoot&quot; shoes that aim to provide the benefits of barefoot walking while offering some protection from environmental hazards.","children":[]}]}]},{})</script>
+</body>
+</html>
