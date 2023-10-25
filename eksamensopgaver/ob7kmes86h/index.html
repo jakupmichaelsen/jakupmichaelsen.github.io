@@ -1,0 +1,658 @@
+<!DOCTYPE html><html>
+                <head><title>1stx231-ENG/B-17052023</title>
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" href="./css/general-web-theme.css">
+                    <link rel="stylesheet" type="text/css" href="./css/proeveelement-digital-proeve-theme.css"><script src="./assets/videoplayer/js/jquery.js"></script><script src="./assets/videoplayer/js/jquery-ui.js"></script><script src="./assets/videoplayer/js/video-player.js"></script><link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/video-player.css"><link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/jquery-ui.css"><script type="text/javascript">var subtitles = {T_8270: {
+lang: "en",
+name: "English",
+tracks: [
+T(TTime("00:00:00.000:00"), TTime("00:00:03.000:00"), "Kun tekst, der er relevant for opgavebesvarelsen, er tekstet til talesyntese.")
+]
+}, T_8272: {
+lang: "en",
+name: "English",
+tracks: [
+T(TTime("00:00:00.000:00"), TTime("00:00:03.000:00"), "Kun tekst, der er relevant for opgavebesvarelsen, er tekstet til talesyntese.")
+]
+}};
+
+                function UndefinedToZero(value) {
+                    if(typeof value === "undefined") {
+                        return 0;
+                    }
+                    return value;
+                }
+
+                function _Time(frames, seconds, minutes, hours) {
+                    frames = UndefinedToZero(frames) / 24;
+                    seconds = UndefinedToZero(seconds);
+                    minutes = UndefinedToZero(minutes) * 60;
+                    hours = UndefinedToZero(hours) * 3600;
+                    return hours + minutes + seconds + frames;
+                }
+
+                function TTime(value) {
+                    if(typeof value === "undefined") {
+                        value = "00:00:00:00";
+                    }
+                    var split = value.split(":");
+                    var frames = (split[3]*1)/24;
+                    var seconds = split[2]*1;
+                    var minutes = (split[1]*1)*60;
+                    var hours = (split[0]*1)*3600;
+                    var output = hours + minutes + seconds + frames;
+                    return output;
+                }
+
+                function T(start, end, text, direction) {
+                    if(typeof direction === "undefined") {
+                        direction = "ltr";
+                    }
+                    return {
+                        start: start,
+                        end: end,
+                        text: text,
+                        direction: direction
+                    }
+                }</script></head>
+                <body>
+                <style>
+                    a:hover {
+                        cursor: pointer;
+                    } 
+
+                    .content-editable {
+                        position: relative; 
+                    }
+
+                    .draggable-reading-field {
+                        display: inline-block; 
+                        position: absolute; 
+                        z-index: 9; 
+                        border: 1px solid gray;
+                        padding: 2px;
+                    }
+
+                    .draggable-reading-field-invisible {
+                        opacity: 0 !important;
+                        border-style: none;
+                    }
+
+                    .line-numbers-container {
+                        resize: none !important;
+                        border: none !important;
+                        padding: 0 !important;
+                        counter-reset: line;
+                    }
+
+                    .line-numbers-container p.numbered-line {
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                    }
+
+                    .line-numbers-container p.numbered-line:before {
+                        content: counter(line);
+                        counter-increment: line;
+                        color: #888;
+                        visibility: hidden;
+                        display: inline-block;
+                        width: 20px;
+                    }
+
+                    .line-numbers-container p.numbered-line:first-child:before, 
+                    .line-numbers-container p.numbered-line:nth-child(5n):before {
+                        visibility: visible;
+                    }
+                </style>
+            <div class="skabelon">
+                <header class="skabelon-header">
+                    <div style="position: relative;" class="skabelon-header-institution_logo">
+                    <p style="position: absolute; color: transparent; top: 2%;">
+                        Studentereksamen
+                    </p></div>
+                    <img class="skabelon-header-stuk_logo" id="uvm_logo" src="assets/images/uvm_logo_stuk.png">
+                </header>
+                <div class="skabelon-wrapper">
+                    <div class="skabelon-wrapper-menu" id="skabelon-wrapper-menu">
+                        <ul><ul>
+<li><a href="javascript:void(0)" class="web-document-link active parent-document" 
+                id="web-document-link-1361" data-document-id="1361" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Forside</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3595" data-document-id="3595" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Vejledning</a><ul>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3595 noActiveRelation" 
+                id="web-document-link-4495" data-document-id="4495" data-parent-document-id="3595" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Henvisning til tekst, video- og lydklip</a></li>
+</ul></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-4961" data-document-id="4961" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Template</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3597" data-document-id="3597" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 1</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3598" data-document-id="3598" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 2</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3599" data-document-id="3599" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 3</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3600" data-document-id="3600" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 4</a></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3601" data-document-id="3601" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 5</a><ul>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3601 noActiveRelation" 
+                id="web-document-link-4496" data-document-id="4496" data-parent-document-id="3601" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 5A</a></li>
+<li><a href="javascript:void(0)" class="web-document-link child-document-of-3601 noActiveRelation" 
+                id="web-document-link-4497" data-document-id="4497" data-parent-document-id="3601" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Assignment 5B</a></li>
+</ul></li>
+<li><a href="javascript:void(0)" class="web-document-link parent-document" 
+                id="web-document-link-3646" data-document-id="3646" 
+                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();" >Sources</a></li>
+</ul></ul>
+                        <a id="proeveforekomst">1stx231-ENG/B-17052023</a>
+                    </div>
+                    <div class="skabelon-wrapper-content">
+                        <div class="content-editable" id="content-editable">
+                            <style>
+                                .web-document {
+                                    display: none;
+                                }
+                        
+                                .web-document-active {
+                                    display: block;
+                                }
+                            </style>
+                            <div class="web-document " id="web-document-3646">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Sources</span></h2>
+                                <p><strong>Anvendt materiale (til brug for Copydan):</strong></p>
+                                <p>Delia Owens. <em>Where the Crawdads Sing.</em> London: Corsair, 2018.</p>
+                                <p>“Why it<span>’</span>s not always as simple as TikTok<span>’</span>s dating advice ’if he wanted to, he
+                                    would’”, Rachel Thompson, <em>Mashable </em>website, November 27, 2020. Viewed October 2022.
+                                    (www.mashable.com)</p>
+                                <p>Video. “The Queen’s speech at the COP26 Evening Reception”. <em>Youtube</em> website, November 1, 2021.
+                                    Viewed October 2022. (www.youtube.com)</p>
+                                <p>Image credit: Bettmann/CORBIS “Cooling off with fire hydrants”. <em>Daily Mail</em> website, May 27, 2013.
+                                    Viewed October 2022. (www.dailymail.co.uk)</p>
+                                <p>Jen Knox. “Salt”. <em>Medium</em> website, November 2019. Viewed October 2022. (www.medium.com)</p>
+                                <p>Sarfraz Manzoor. <em>THEY.</em> London: Wildfire, Headline Publishing Group, 2021.</p>
+                                <p>Video. “Sarfraz Manzoor confronts preconceptions about British Muslims”. <em>Youtube</em> website, August 19,
+                                    2021. Viewed October 2022. (www.dailymail.co.uk)</p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-4497">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 5B</span></h2>
+                                <ol>
+                                    <li>Write a short summary of the excerpt from the memoir <em>THEY</em> by Sarfraz Manzoor in about 125
+                                        words.</li>
+                                </ol>
+                                <ol start="2">
+                                    <li>Write an analytical essay (600-900 words) about the excerpt. Your essay must focus on Sarfraz Manzoor’s
+                                        use of personal experience. Discuss briefly if Sarfraz Manzoor’s vision for the future of Britain as a
+                                        harmonious multicultural society is realistic.<br><br>Include the following analytical terms in your
+                                        essay: <br><em>receivers, language, </em><em>sender</em></li>
+                                </ol>
+                                <p><br></p>
+                                <p>Your essay must include <a style="text-decoration:underline; color: blue;"data-document-id="4495" onclick="changeDocument(this);">references</a> to the text.</p>
+                                <p>As an introduction to the text, watch this short video in which the author talks about the events that led
+                                    him to write <em>THEY</em>.</p>
+                                <div class="new-player mceNonEditable" contenteditable="false">
+                                    <div class="new-player-video" style="width: 600px; height: 300px;"
+                                        data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                            src="assets/19115_Sarfraz Manzoor-8272.mp4" pbyg-data-src-id="8272"></video></div>
+                                    <div class="subtitles new-player-subtitles" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                    <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                </div>
+                                <p><strong>Material</strong></p>
+                                <p>Sarfraz Manzoor, <a pbyg-data-href-id="9918" href="assets/They_version1.2-9918.pdf" target="_blank"
+                                        rel="noopener"
+                                        data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/rrhMdebMXsQG7OgcPZYyWg/document/They_version1.2.pdf"><em>THEY</em></a>,
+                                    an excerpt from a memoir published in 2021.</p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-4496">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 5A</span></h2>
+                                <ol>
+                                    <li>Write a short summary of Jen Knox’ short story “Salt” in about 125 words.<br><br></li>
+                                    <li>Write an analytical essay (600-900 words) in which you analyse and interpret the short story. Your essay
+                                        must focus on the main character.</li>
+                                </ol>
+                                <p style="padding-left: 40px;" data-mce-style="padding-left: 40px;">Include the following analytical terms in
+                                    your essay: <br><em>narrative technique, conflict, </em><em>setting</em><em></em></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p>Your essay must include <a style="text-decoration:underline; color: blue;"data-document-id="4495" onclick="changeDocument(this);">references</a> to the text<em>.</em></p>
+                                <p><strong>Material</strong></p>
+                                <p>Jen Knox, <em>“<a pbyg-data-href-id="9755" href="assets/Salt_version 1_3-9755.pdf" target="_blank"
+                                            rel="noopener"
+                                            data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/Ri-rlkpenqH2JnzHueHBgA/document/Salt_version 1_3.pdf">Salt</a>”</em>,
+                                    2019.</p>
+                                <p><br></p>
+                                <p><br></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3601">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 5</span></h2>
+                                <ul>
+                                    <li>Answer 5A <strong>or</strong> 5B</li>
+                                </ul>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3600">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 4</span></h2>
+                                <p><strong>Write a text (50-75 words) to match the photo.</strong></p>
+                                <p style="text-align: left;" data-mce-style="text-align: left;"><strong>In your text you must use the
+                                    </strong><strong>progressive </strong><strong>tense (udvidet tid) at least twice, and you must include at
+                                        least five different adjectives (tillægsord). Underline the examples of the progressive tense and the
+                                        adjectives in your text.</strong></p>
+                                <figure style="text-align: center;" class="image align-center" contenteditable="false"
+                                    data-mce-style="text-align: center;"><img pbyg-data-src-id="5902"
+                                        src="assets/Fire hydrant summer2.jpg-5902.png" alt="" width="560" height="368"
+                                        data-mce-src="https://xn--prvebyggeren-wjb.dk/webdav/R8DQ_MxX4DquZr1MsG3qOg/document/Fire hydrant summer2.jpg.png">
+                                </figure>
+                                <p><br></p>
+                            </div>
+                            <div class="web-document " id="web-document-3599">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 3</span></h2>
+                                <p><strong><span style="color: #000000;" data-mce-style="color: #000000;">I nedenstående video taler Queen
+                                            Elizabeth II om sit syn på klimakrisen. Videotalen blev holdt i forbindelse med COP26 i Glasgow,
+                                            Skotland i 2021.</span></strong></p>
+                                <p><strong>Se videoen, og angiv, hvilken ordklasse de nedenstående ord tilhører ud fra sammenhængen. Find ét
+                                        synonym til hvert af de nedenstående ord ud fra den betydning, de har i sammenhængen.
+                                    </strong><strong><span style="color: #000000;" data-mce-style="color: #000000;">Synonymet må kun bestå af ét
+                                            enkelt ord.</span></strong></p>
+                                <div class="new-player mceNonEditable" contenteditable="false">
+                                    <div class="new-player-video" style="width: 600px; height: 300px;"
+                                        data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                            src="assets/19115_The_Queens_speech-8270.mp4" pbyg-data-src-id="8270"></video></div>
+                                    <div class="subtitles new-player-subtitles" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                    <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;"><br></div>
+                                </div>
+                                <p>delighted (0:06)</p>
+                                <p>fitting (0:14)</p>
+                                <p>discharge (0:29)</p>
+                                <p>impact (0:30)</p>
+                                <p>well (0:42)</p>
+                                <p>gathering (0:47)</p>
+                                <p>intolerable (0:59)</p>
+                                <p>pale (1:07)</p>
+                                <p>especially (1:38)</p>
+                                <p>objective (1:50)</p>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3598">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 2</span></h2>
+                                <p><strong>Besvar opgave a., b. og c. Brug relevant grammatisk terminologi. Husk <a 
+                                     data-document-id="4495" onclick="changeDocument(this);"><u>kildehenvisning</u></a>, hvis du citerer fra en
+                                        grammatikbog. Skriv dit svar på dansk.</strong></p>
+                                <table border="0" cellpadding="5" cellspacing="2,5"
+                                    style="border-collapse: collapse; width: 100%; border-style: none;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; border-style: none;" class="mce-item-table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 4.07633%; text-align: right; vertical-align: top;"
+                                                data-mce-style="width: 4.07633%; text-align: right; vertical-align: top;"><strong>a.</strong>
+                                            </td>
+                                            <td style="width: 95.9237%; vertical-align: top;"
+                                                data-mce-style="width: 95.9237%; vertical-align: top;"><strong>Find og skriv fire forskellige
+                                                    typer pronominer (stedord) fra linje 1-6. Angiv for hvert pronomen, hvilken type pronomen
+                                                    det er<span class="" pbyg-data-comment-id="2286" id="comment-2286">.</span></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 4.07633%; text-align: right; vertical-align: top;"
+                                                data-mce-style="width: 4.07633%; text-align: right; vertical-align: top;"><strong>b.</strong>
+                                            </td>
+                                            <td style="width: 95.9237%; vertical-align: top;"
+                                                data-mce-style="width: 95.9237%; vertical-align: top;"><strong>Find og skriv to forskellige
+                                                    konjunktioner (bindeord) fra linje 8-12. Forklar, hvorvidt konjunktionerne er underordnende
+                                                    eller sideordnende.</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 4.07633%; text-align: right; vertical-align: top;"
+                                                data-mce-style="width: 4.07633%; text-align: right; vertical-align: top;"><strong>c.</strong>
+                                            </td>
+                                            <td style="width: 95.9237%; vertical-align: top;"
+                                                data-mce-style="width: 95.9237%; vertical-align: top;"><strong>I teksten er fire adverbier
+                                                    (biord) understreget i linje 14-26. Angiv for hvert adverbium, hvad det lægger sig
+                                                    til.</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><br></p>
+                                <table border="1" cellpadding="7" style="border-collapse: collapse; width: 99.9665%; background-color: #c2e0f4;"
+                                    data-mce-style="border-collapse: collapse; width: 99.9665%; background-color: #c2e0f4;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 99.4036%;" data-mce-style="width: 99.4036%;"><br>
+                                                <div class="line-numbers-container">
+                                                    <p class="numbered-line">We’ve all had moments where we needed a cold hard dose of reality
+                                                        to help us move on</p>
+                                                    <p class="numbered-line">from someone who wasn’t matching our energy, and wasn’t treating us
+                                                        the way we’d like</p>
+                                                    <p class="numbered-line">to be treated. When it comes to situations like that, this kind of
+                                                        dating advice can be</p>
+                                                    <p class="numbered-line">helpful, if delivered in the right way. But there are also times
+                                                        when someone you really like</p>
+                                                    <p class="numbered-line">or love pulls away from you and the last thing you need to hear is
+                                                        that it’s because they</p>
+                                                    <p class="numbered-line">didn’t feel any desire to pursue you. Talk about rubbing salt in
+                                                        the wound. […]</p>
+                                                    <p class="numbered-line"><br></p>
+                                                    <p class="numbered-line">From my own perspective, there have been times in my life when I
+                                                        wanted to reach out to</p>
+                                                    <p class="numbered-line">someone I was dating but didn’t. Those reasons were: having
+                                                        feelings for someone else,</p>
+                                                    <p class="numbered-line">not feeling ready to move on, recognising I have some work to do on
+                                                        myself before getting</p>
+                                                    <p class="numbered-line">in to something, not wanting a relationship at that moment in time,
+                                                        and a fear of being</p>
+                                                    <p class="numbered-line">rejected.</p>
+                                                    <p class="numbered-line"><br></p>
+                                                    <p class="numbered-line">I was thinking about my behaviour from a few years ago. I was
+                                                        trying to move on from a</p>
+                                                    <p class="numbered-line">relationship that had long ended. I was struggling to shake off the
+                                                        feelings I had for the</p>
+                                                    <p class="numbered-line">person and I thought that meeting someone new would make any love
+                                                        for him evaporate</p>
+                                                    <p class="numbered-line"><span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">instantly</span>. Naive, I know, but we
+                                                        live and learn. I opened Bumble and arranged</p>
+                                                    <p class="numbered-line">back-to-back dates over consecutive nights. Amid a few rather <span
+                                                            style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">laughably</span> bad dates,</p>
+                                                    <p class="numbered-line">there was one gem. The guy was kind, funny, smart, handsome, he had
+                                                        a cool job, and,</p>
+                                                    <p class="numbered-line"><span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">crucially</span>, he liked me. On our
+                                                        first date, we realised we’d both gone to the</p>
+                                                    <p class="numbered-line">same school and had grown up near one another. It felt too good to
+                                                        be true. At one point</p>
+                                                    <p class="numbered-line">in the date, he asked me if I wanted to go get something to eat, I
+                                                        felt a tug inside me that</p>
+                                                    <p class="numbered-line">told me to leave, that I was getting too close to someone new.
+                                                        While getting ready for our</p>
+                                                    <p class="numbered-line">second date, I had a panic attack because I was afraid he would try
+                                                        to kiss me. At this</p>
+                                                    <p class="numbered-line">moment, I knew I wasn’t ready for any of this. After the second
+                                                        date, we <span style="text-decoration: underline;"
+                                                            data-mce-style="text-decoration: underline;">mutually</span> agreed</p>
+                                                    <p class="numbered-line">to call it quits because there didn’t seem to be anything beyond
+                                                        friendship between us.</p>
+                                                </div>
+                                                <p style="text-align: right; font-size: 14px;"
+                                                    data-mce-style="text-align: right; font-size: 14px;">“Why it’s not always as simple as
+                                                    TikTok’s dating advice ‘if he wanted to, he would’”, <br>Rachel Thompson, <em>Mashable
+                                                    </em>website, 2020</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><br></p>
+                                <p><br></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3597">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 1</span></h2>
+                                <p><strong>Find alle verberne (udsagnsordene) i præteritum (datid) i nedenstående tekst, og omskriv dem til
+                                        præsens (nutid). Skriv hele teksten som dit svar, og markér verberne tydeligt som i
+                                        eksemplet.</strong><strong></strong></p>
+                                <table border="0" style="border-collapse: collapse; width: 100%; border-style: none;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; border-style: none;" class="mce-item-table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 13.8287%; vertical-align: top;"
+                                                data-mce-style="width: 13.8287%; vertical-align: top;"><strong>Eksempel:</strong></td>
+                                            <td style="width: 86.1713%;" data-mce-style="width: 86.1713%;">She increased throttle and…<br><br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 13.8287%;" data-mce-style="width: 13.8287%;"></td>
+                                            <td style="width: 86.1713%;" data-mce-style="width: 86.1713%;">She <strong>increases
+                                                </strong>throttle and…<br><br></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table border="1" height="131" cellpadding="10"
+                                    style="border-collapse: collapse; width: 100.911%; background-color: #c2e0f4;"
+                                    data-mce-style="border-collapse: collapse; width: 100.911%; background-color: #c2e0f4;">
+                                    <tbody>
+                                        <tr style="height: 416.8px;" data-mce-style="height: 416.8px;">
+                                            <td style="width: 100%; text-align: right;" data-mce-style="width: 100%; text-align: right;">
+                                                <p style="text-align: left;" data-mce-style="text-align: left;">She increased throttle and
+                                                    turned her boat toward his, all the while scanning the sea to make sure his friends were out
+                                                    of sight. Chase motioned her north past Barkley Cove – the village serene and colorful in
+                                                    the distance – and landed on the beach of a small bay tucked in deep forest. After securing
+                                                    the boats, he led her down an overgrown path of wax myrtle and prickly holly. She’d never
+                                                    been to this watery and rooty forest, because it stood on the other side of the village and
+                                                    was too close to people. As they walked, thin runnels of backwater seeped under the brush –
+                                                    slinky reminders that the sea owned this land.</p>
+                                                <p style="text-align: left;" data-mce-style="text-align: left;">Then a true swamp settled deep
+                                                    with its low-earth smell and fusty air. Sudden, subtle and silent all at once, it stretched
+                                                    into the mouth of the dark receding forest. Kya saw the weathered wooden platform of the
+                                                    abandoned fire tower above the canopy, and a few minutes later, they arrived at its
+                                                    straddle-legged base, made of rough-cut poles. Black mud oozed around the legs and under the
+                                                    tower, and damp rot ate its way along the beams. After crossing the sludge, they started the
+                                                    climb, Chase leading. By the fifth switchback, the rounded oak forests tumbled west as far
+                                                    as they could see. In every other direction, slipstreams wove through brilliant green grass
+                                                    to the sea. Kya had never been this high above the marsh.</p>
+                                                <p style="text-align: right; font-size: 14px;"
+                                                    data-mce-style="text-align: right; font-size: 14px;">Delia Owens, <em>Where the Crawdads
+                                                        Sing</em>, 2018</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><br></p>
+                                <p><br></p>
+                            </div>
+                            <div class="web-document " id="web-document-4961">
+                                <h2><a pbyg-data-onclick-id="9919" onclick="window.open('assets/Template-170523_version1-4.docx')"
+                                        class="inserted-documents">Klik her for at hente template</a></h2>
+                                <p><br data-mce-bogus="1"></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-4495">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;"><strong>Henvisninger til tekst, video- og
+                                            lydklip</strong></span></h2>
+                                <p>Hvis du citerer, skal du angive kilde.<br>Alt anvendt materiale skal være engelsksproget og angives med
+                                    kildehenvisninger. Til forklaring af grammatiske opgaver kan materialerne være på dansk.<br>Du kan henvise
+                                    til dele af video- og lydklip, f.eks. ved at angive afspillerens minut- og sekundtal for henholdsvis starten
+                                    og slutningen af klippet.</p>
+                                <table width="100%" cellpadding="10"
+                                    style="border-collapse: collapse; width: 100%; background-color: #c2e0f4; border: 1px solid #000;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; background-color: #c2e0f4; border: 1px solid #000;"
+                                    class="mce-item-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;"><strong>Generel skabelon for
+                                                            henvisninger til tekster</strong></span><br><strong></strong></h2>
+                                                <p><strong>Henvisninger</strong></p>
+                                                <p>Du henviser til tekster ved <em>enten</em> 1) at angive linjenummeret eller
+                                                    minuttalsangivelsen i en fodnote <em>eller</em> ved 2) at sætte linjenummeret eller
+                                                    minuttalsangivelsen i parentes inde i din tekst:</p>
+                                                <p>Ved én linje: l. 34</p>
+                                                <p>Ved flere linjer: ll. 35-37</p>
+                                                <p>Ved minuttalsangivelse: 01:23-02:12</p>
+                                                <p><strong>I fodnoter angives:</strong></p>
+                                                <p><strong>Opslag i bog</strong></p>
+                                                <p>“Hvad er et ‘utælleligt ord’?”. Helle Brieghel og Dorthe Chalotte Hansen. <em>Engelsk
+                                                        Grundgrammatik. Questions and Answers.</em> Systime 2010. p. 47.</p>
+                                                <p><strong>Opslag i elektronisk opslagsværk</strong></p>
+                                                <p>“Utællelige substantiver”. Thomas Boesen og Sarah Barding. <em>Engram</em>. Minlaering 2019.
+                                                    (www.minlaering.dk)</p>
+                                                <p><strong>Artikel fra bog eller antologi </strong></p>
+                                                <p>“Post-Modernism”. Gitte Vest Barkholt and Jørgen Døssing Jepsen. <em>A Short History of
+                                                        Literature in English. A Handbook.</em> Systime 2010. pp. 79-93.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h2 style="line-height: 1;" data-mce-style="line-height: 1;"><span style="color: #ba372a;"
+                                        data-mce-style="color: #ba372a;">Tekster i opgavesættet</span></h2>
+                                <p style="line-height: 1.3;" data-mce-style="line-height: 1.3;">Teksternes ortografi og tegnsætning følger
+                                    forlæggene. Trykfejl er dog rettet. <br>Opsætningen følger ikke nødvendigvis forlæggene. Dog følges
+                                    forlægget nøje, hvor opsætningen på den ene eller anden måde indgår i opgaven.</p>
+                                <p><br></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document " id="web-document-3595">
+                                <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;"><strong>Vejledning til
+                                            opgavesættet</strong></span></h2>
+                                <table width="100%" height="473" cellpadding="10"
+                                    style="border-collapse: collapse; width: 100%; height: 296px; background-color: #c2e0f4; border: 1px solid #000;"
+                                    data-mce-style="border-collapse: collapse; width: 100%; height: 296px; background-color: #c2e0f4; border: 1px solid #000;"
+                                    class="mce-item-table">
+                                    <tbody>
+                                        <tr style="height: 50px;" data-mce-style="height: 50px;">
+                                            <td colspan="2" width="599" style="width: 99.7678%; height: 50px;"
+                                                data-mce-style="width: 99.7678%; height: 50px;">
+                                                <p><strong>Du skal besvare følgende opgaver:</strong></p>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 68px;" data-mce-style="height: 68px;">
+                                            <td colspan="2" width="599" style="width: 99.7678%; height: 68px;"
+                                                data-mce-style="width: 99.7678%; height: 68px;">
+                                                <ul>
+                                                    <li>Assignment 1-5</li>
+                                                    <li>I Assignment 5 skal du vælge A <strong>eller</strong> B</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 50px;" data-mce-style="height: 50px;">
+                                            <td colspan="2" width="599" style="width: 99.7678%; height: 50px;"
+                                                data-mce-style="width: 99.7678%; height: 50px;">
+                                                <p><strong>Tekster til Assignment 5:</strong></p>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 50px;" data-mce-style="height: 50px;">
+                                            <td width="112" style="width: 19.1045%; height: 50px;"
+                                                data-mce-style="width: 19.1045%; height: 50px;">
+                                                <p>5A – Fiction:</p>
+                                            </td>
+                                            <td width="487" style="width: 80.6633%; height: 50px;"
+                                                data-mce-style="width: 80.6633%; height: 50px;">
+                                                <p>“Salt”, a short story by Jen Knox, 2019.</p>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 68px;" data-mce-style="height: 68px;">
+                                            <td width="112" style="width: 19.1045%; height: 68px;"
+                                                data-mce-style="width: 19.1045%; height: 68px;">
+                                                <p>5B – Non-fiction:</p>
+                                            </td>
+                                            <td width="487" style="width: 80.6633%; height: 68px;"
+                                                data-mce-style="width: 80.6633%; height: 68px;">
+                                                <p><em>THEY</em>, an excerpt from the memoir by Sarfraz Manzoor, 2021. </p>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 10px;" data-mce-style="height: 10px;">
+                                            <td width="112" style="width: 19.1045%; height: 10px;"
+                                                data-mce-style="width: 19.1045%; height: 10px;">
+                                                <p> </p>
+                                            </td>
+                                            <td width="487" style="width: 80.6633%; height: 10px;"
+                                                data-mce-style="width: 80.6633%; height: 10px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>Vejledning og skabelon til at løse opgaven</strong><span></span><br><span>Den samlede
+                                        eksaminationstid for Assignment 1-5 er 5 timer. Besvarelsen bedømmes som en helhed ud fra de faglige mål
+                                        for niveauet. Der lægges vægt på beherskelsen af det engelske sprog, forståelse af forlægget og
+                                        færdighed i skriftlig fremstilling på engelsk.</span><br><br><span>Det anbefales, at du skriver din
+                                        besvarelse i skabelonen, som ligger under Template i menuen til venstre. Besvarelsen afleveres i ét
+                                        dokument med opgaverne i rækkefølgen 1-5.</span></p>
+                                <p><br></p>
+                                <p><br data-mce-bogus="1"></p>
+                            </div>
+                            <div class="web-document frontpage-web-document web-document-active" id="web-document-1361">
+                <div class="frontpage-fields">
+                    <h1 class="frontpage-proeve-title" contenteditable="false">Engelsk B</h1>
+                    <p class="frontpage-proeve-proeveordning" contenteditable="false"></p>
+                    <p class="frontpage-dato-for-afholdelse" contenteditable="false">Onsdag den 17. maj 2023</p><p class="frontpage-proeve-start-slut-tidspunkt"contenteditable="false"></p></div><p class="optional-textfield-1">Kl. 9.00-14.00</p><p><br></p><p><br></p></div></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function resetWordCounters() {
+                    var wordCounters = document.getElementsByClassName('word-counter')
+                    Array.prototype.forEach.call(wordCounters, function(wordCounter) {
+                        wordCounter.innerHTML = 0;
+                    });
+                })();
+
+                function countWords(obj) {
+                    let res = [];
+                    let str = obj.value.replace(/[\t\n\r\.\?\!]/gm, ' ').split(' ');
+                    str.map((s) => {
+                        let trimStr = s.trim();
+                        if (trimStr.length > 0)
+                        {
+                          res.push(trimStr);
+                        }
+                    });
+                    obj.closest('.wordcount-textarea').getElementsByClassName('word-counter')[0].innerHTML = res.length;
+                }
+            </script>
+            <script>
+            function changeDocument(element) {
+              	document.querySelectorAll(".web-document").forEach(element => {
+                	if(element.classList.contains("web-document-active")) {
+                    	element.classList.remove("web-document-active");
+                    }
+                });
+            	var webDocument = document.getElementById("web-document-" + element.getAttribute("data-document-id"));
+                if (!webDocument.classList.contains("web-document-active")) {
+                	webDocument.classList.add("web-document-active");
+                }
+                this.changeActiveMenuLink(element.id);
+            }
+            
+            function changeActiveMenuLink(elementId) {
+              	document.querySelectorAll(".web-document-link").forEach(element => {
+                	if(element.classList.contains("active")) {
+                    	element.classList.remove("active");
+                    }
+                });
+                
+            	var activeElement = document.getElementById(elementId);
+                if (!activeElement.classList.contains("active")) {
+                	activeElement.classList.add("active");
+                }
+
+                var activeElementParentId = activeElement.getAttribute("data-document-id");
+                if (activeElement.hasAttribute("data-parent-document-id")) {
+                    activeElementParentId = activeElement.getAttribute("data-parent-document-id");
+                }
+
+                document.querySelectorAll(".web-document-link").forEach(document => {
+                    if(document.classList.contains("parent-document") || activeElementParentId == document.getAttribute("data-parent-document-id")) {
+                        document.classList.remove("noActiveRelation");
+                    } else {
+                        document.classList.add("noActiveRelation");
+                    }
+                });
+            }
+
+            VideoPlayer.InitPlayers('.web-document-active .new-player');
+            VideoPlayer.PauseAll();
+            </script></body></html>
