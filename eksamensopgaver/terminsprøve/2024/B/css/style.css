@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	min-height: 1000px;
+}
+
+a:hover {
+    cursor: pointer;
+} 
+
+
+
+.skabelon {
+    max-width: 80%;
+    width: 95%;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.skabelon-wrapper {
+    display: flex;
+    min-height: 1000px;
+    height: 100%;
+}
+
+
+.skabelon-wrapper-menu {
+    background-color: rgb(127, 37, 62); /* Dark red */
+    max-width: 20%;
+    min-width: 20%;
+}
+
+.skabelon-header {
+    height: 100px;
+    display: none;
+}
+
+.skabelon-wrapper-content .content-editable {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+}
+
+.web-document{
+    padding: 2em;
+    min-height: 1000px;
+}
+
+.skabelon-wrapper-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    height: auto;
+    font-weight: bold;
+}
+
+.skabelon-wrapper-menu ul li a {
+    display: block;
+    background-color: #ffffff2f;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    height: 100%;
+}
+
+.skabelon-wrapper .skabelon-wrapper-menu ul li a ~ ul {
+    font-size: 13px;
+}
+
+.skabelon-wrapper-menu ul li a.active {
+    background-color: #ffffff81;
+    color: rgb(0, 0, 0);
+    height: 100%;
+}
+
+.skabelon-wrapper-menu ul li a:hover:not(.active) {
+    background-color: #ffffff81;
+    color: rgb(0, 0, 0);
+    height: 100%;
+}
+
+.skabelon-wrapper .skabelon-wrapper-menu ul li a ~ ul {
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+#taskNumber {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 8px;
+    text-align: center;
+    height: 20px;
+    padding-top: 150px;
+    margin-left: 11.2%;
+    margin-right: 5%;
+}
+
+.line-numbers-container {
+    resize: none !important;
+    border: none !important;
+    padding: 0 !important;
+    counter-reset: line;
+}
+
+.line-numbers-container p.numbered-line {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.line-numbers-container p.numbered-line:before {
+    content: counter(line);
+    counter-increment: line;
+    color: #888;
+    visibility: hidden;
+    display: inline-block;
+    width: 20px;
+}
+
+.line-numbers-container p.numbered-line:first-child:before, 
+.line-numbers-container p.numbered-line:nth-child(5n):before {
+    visibility: visible;
+}
+
+ 
+
+.noActiveParent * {
+    height: 0px;
+    visibility: collapse;
+} 
+
+.noActiveRelation {
+    display: none !important;
+}
+
