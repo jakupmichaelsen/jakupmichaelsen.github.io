@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>stx233-ENG/A-12122023</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/general-web-theme.css">
+    <link rel="stylesheet" type="text/css" href="./css/proeveelement-digital-proeve-theme.css">
+    <script src="./assets/videoplayer/js/jquery.js"></script>
+    <script src="./assets/videoplayer/js/jquery-ui.js"></script>
+    <script src="./assets/videoplayer/js/video-player.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/video-player.css">
+    <link rel="stylesheet" type="text/css" href="./assets/videoplayer/css/jquery-ui.css">
+    <script type="text/javascript">var subtitles = {
+            T_9818: {
+                lang: "en",
+                name: "English",
+                tracks: [
+                    T(TTime("00:00:00.000:00"), TTime("00:00:03.720:00"), "Kun tekst, der er relevant for opgavebesvarelse, er tekstet til talesyntese"),
+                    T(TTime("00:00:03.720:00"), TTime("00:00:06.000:00"), "BBC RADIO 4<br>The STARS and STRIPES"),
+                    T(TTime("00:00:06.000:00"), TTime("00:00:12.000:00"), "DR. ADAM SMITH"),
+                    T(TTime("00:00:12.900:00"), TTime("00:00:18.600:00"), "OTHER SYMBOLS HAVE COME & GONE..."),
+                    T(TTime("00:00:18.720:00"), TTime("00:00:23.720:00"), "BUT THE AMERICAN FLAG HAS ENDURED."),
+                    T(TTime("00:00:24.720:00"), TTime("00:00:28.800:00"), "A SYMBOL OF<br> THE NATION"),
+                    T(TTime("00:00:31.500:00"), TTime("00:00:34.640:00"), "1775<br>AMERICAN REVOLUTIONARY WAR"),
+                    T(TTime("00:00:47.500:00"), TTime("00:00:50.240:00"), "1st American FLAG"),
+                    T(TTime("00:00:50.240:00"), TTime("00:00:53.040:00"), "1777"),
+                    T(TTime("00:01:03.000:00"), TTime("00:01:04.000:00"), "MASSACHUSETTS"),
+                    T(TTime("00:01:04.000:00"), TTime("00:01:05.000:00"), "NEW HAMPSHIRE"),
+                    T(TTime("00:01:05.000:00"), TTime("00:01:06.000:00"), "NEW YORK"),
+                    T(TTime("00:01:06.000:00"), TTime("00:01:07.000:00"), "RHODE ISLAND"),
+                    T(TTime("00:01:07.000:00"), TTime("00:01:08.000:00"), "CONNECTICUT"),
+                    T(TTime("00:01:08.000:00"), TTime("00:01:09.000:00"), "PENNSYLVANIA"),
+                    T(TTime("00:01:09.000:00"), TTime("00:01:10.000:00"), "NEW JERSEY"),
+                    T(TTime("00:01:10.000:00"), TTime("00:01:11.000:00"), "MARYLAND"),
+                    T(TTime("00:01:11.000:00"), TTime("00:01:12.000:00"), "DELAWARE"),
+                    T(TTime("00:01:12.000:00"), TTime("00:01:13.000:00"), "VIRGINIA"),
+                    T(TTime("00:01:13.000:00"), TTime("00:01:14.000:00"), "NORTH CAROLINA"),
+                    T(TTime("00:01:14.000:00"), TTime("00:01:15.000:00"), "SOUTH CAROLINA"),
+                    T(TTime("00:01:15.000:00"), TTime("00:01:16.600:00"), "GEORGIA"),
+                    T(TTime("00:01:19.640:00"), TTime("00:01:22.720:00"), "O say, can you see…"),
+                    T(TTime("00:01:32.000:00"), TTime("00:01:38.040:00"), "OH, SAY DOES THAT STAR SPANGLED BANNER YET WAVE…"),
+                    T(TTime("00:01:39.000:00"), TTime("00:01:46.000:00"), "O’er the land of the FREE<br> And the home of the BRAVE"),
+                    T(TTime("00:01:47.960:00"), TTime("00:01:55.000:00"), "2016"),
+                    T(TTime("00:01:56.600:00"), TTime("00:02:02.000:00"), "I’m a PATRIOT<br>I BELIEVE in the nation."),
+                    T(TTime("00:02:13.000:00"), TTime("00:02:18.000:00"), "BBC RADIO 4, bbc.co.uk/radio4, COGNI+IVE")
+
+                ]
+            }, T_10509: {
+                lang: "en",
+                name: "English",
+                tracks: [
+                    T(TTime("00:00:00.000:00"), TTime("00:00:03.753:00"), "Kun tekst, der er relevant for opgavebesvarelsen, er tekstet til talesyntese."),
+                    T(TTime("00:00:16.099:00"), TTime("00:00:22.605:00"), "Srikant Datar, Harvard Business School Dean"),
+                    T(TTime("00:00:24.566:00"), TTime("00:00:27.485:00"), "Business"),
+                    T(TTime("00:02:08.169:00"), TTime("00:02:11.089:00"), "Harvard Business School")
+                ]
+            }
+        };
+
+        function UndefinedToZero(value) {
+            if (typeof value === "undefined") {
+                return 0;
+            }
+            return value;
+        }
+
+        function _Time(frames, seconds, minutes, hours) {
+            frames = UndefinedToZero(frames) / 24;
+            seconds = UndefinedToZero(seconds);
+            minutes = UndefinedToZero(minutes) * 60;
+            hours = UndefinedToZero(hours) * 3600;
+            return hours + minutes + seconds + frames;
+        }
+
+        function TTime(value) {
+            if (typeof value === "undefined") {
+                value = "00:00:00:00";
+            }
+            var split = value.split(":");
+            var frames = (split[3] * 1) / 24;
+            var seconds = split[2] * 1;
+            var minutes = (split[1] * 1) * 60;
+            var hours = (split[0] * 1) * 3600;
+            var output = hours + minutes + seconds + frames;
+            return output;
+        }
+
+        function T(start, end, text, direction) {
+            if (typeof direction === "undefined") {
+                direction = "ltr";
+            }
+            return {
+                start: start,
+                end: end,
+                text: text,
+                direction: direction
+            }
+        }</script>
+</head>
+
+<body>
+    <style>
+        a:hover {
+            cursor: pointer;
+        }
+
+        .content-editable {
+            position: relative;
+        }
+
+        .draggable-reading-field {
+            display: inline-block;
+            position: absolute;
+            z-index: 9;
+            border: 1px solid gray;
+            padding: 2px;
+        }
+
+        .draggable-reading-field-invisible {
+            opacity: 0 !important;
+            border-style: none;
+        }
+
+        .line-numbers-container {
+            resize: none !important;
+            border: none !important;
+            padding: 0 !important;
+            counter-reset: line;
+        }
+
+        .line-numbers-container p.numbered-line {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        .line-numbers-container .numbered-line:before {
+            content: counter(line);
+            counter-increment: line;
+            color: #888;
+            visibility: hidden;
+            display: inline-block;
+            width: auto;
+            min-width: 18px;
+            padding-left: 8px;
+            padding-right: 10px;
+            text-align: right;
+            font-weight: 100;
+            font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .line-numbers-container .numbered-line:first-child:before,
+        .line-numbers-container .numbered-line:nth-child(5n of .numbered-line):before {
+            visibility: visible;
+        }
+    </style>
+    <div class="skabelon">
+        <header class="skabelon-header">
+            <div style="position: relative" class="skabelon-header-institution_logo">
+                <p style="position: absolute; color: transparent; top: 2%;">
+                    Studentereksamen
+                </p>
+            </div>
+            <img class="skabelon-header-stuk_logo" id="uvm_logo" src="assets/images/uvm_logo_stuk.png">
+        </header>
+        <div class="skabelon-wrapper">
+            <div class="skabelon-wrapper-menu" id="skabelon-wrapper-menu">
+                <ul>
+                    <ul>
+                        <li><a href="javascript:void(0)" class="web-document-link active parent-document"
+                                id="web-document-link-5456" data-document-id="5456"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Forside</a>
+                        </li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5457" data-document-id="5457"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Vejledning</a>
+                            <ul>
+                                <li><a href="javascript:void(0)"
+                                        class="web-document-link child-document-of-5457 noActiveRelation"
+                                        id="web-document-link-5459" data-document-id="5459"
+                                        data-parent-document-id="5457"
+                                        onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Henvisning
+                                        til tekst, video- og lydklip</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5464" data-document-id="5464"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Template</a>
+                        </li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5460" data-document-id="5460"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                1</a></li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5461" data-document-id="5461"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                2</a></li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5462" data-document-id="5462"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                3</a></li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5463" data-document-id="5463"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                4</a>
+                            <ul>
+                                <li><a href="javascript:void(0)"
+                                        class="web-document-link child-document-of-5463 noActiveRelation"
+                                        id="web-document-link-5465" data-document-id="5465"
+                                        data-parent-document-id="5463"
+                                        onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                        4a</a></li>
+                                <li><a href="javascript:void(0)"
+                                        class="web-document-link child-document-of-5463 noActiveRelation"
+                                        id="web-document-link-5466" data-document-id="5466"
+                                        data-parent-document-id="5463"
+                                        onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Assignment
+                                        4b</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)" class="web-document-link parent-document"
+                                id="web-document-link-5469" data-document-id="5469"
+                                onclick="changeDocument(this);VideoPlayer.InitPlayers('.web-document-active .new-player');VideoPlayer.PauseAll();">Sources</a>
+                        </li>
+                    </ul>
+                </ul>
+                <p id="proeveforekomst">stx233-ENG/A-12122023</p>
+            </div>
+            <div class="skabelon-wrapper-content">
+                <div class="content-editable" id="content-editable">
+                    <style>
+                        .web-document {
+                            display: none;
+                        }
+
+                        .web-document-active {
+                            display: block;
+                        }
+                    </style>
+                    <div class="web-document " id="web-document-5469">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Sources</span></h2>
+                        <p><strong>Anvendt materiale (til brug for Copydan):</strong></p>
+                        <p>Cyril Hare. <em>An English Murder</em>. 1951. <em>Project Gutenberg</em> website, viewed
+                            October 2022. (www.gutenberg.org)</p>
+                        <p>Calvin Tomkins. ”Living Well Is the Best Revenge”. <em>The New Yorker</em> website, July 28,
+                            1962, viewed October 2022. (www.newyorker.com)</p>
+                        <p>Harvard Business School. ”Celebrating the Harvard Business School Class of 2022”.
+                            <em>YouTube</em> website, 2022, viewed October 2022. (www.youtube.com)
+                        </p>
+                        <p>Alison Moore. “The Voice of the People“, 2017. <em><span>Weird Fiction
+                                    Review</span></em><span> website, July 6, 2017, viewed October 2022.
+                                (www.weirdfictionreview.com)</span></p>
+                        <p>Deval Patrick. “A different understanding of American patriotism“. <em>TED</em> website,
+                            January 27, 2022, viewed October 2022. (www.ted.com)</p>
+                        <p>BBC Radio 4. “Why do Americans love their flag?“, <em>YouTube</em> website, November 2,
+                            2016, viewed October 2022. (www.youtube.com)<br><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                    <div class="web-document " id="web-document-5466">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 4B –
+                                Non-fiction</span></h2>
+                        <p>Write an analytical essay (900-1200 words) in which you analyse Deval Patrick’s <em>TED
+                            </em>Talk “A different understanding of American patriotism” and discuss the different
+                            attitudes to patriotism in America.</p>
+                        <p>Part of your essay must focus on how the speaker engages his audience. In addition, your
+                            essay must include an analysis of the style of writing in lines 44-57.</p>
+                        <p>Your essay must include <span style="text-decoration: underline;"
+                                data-mce-style="text-decoration: underline;"><a data-document-id="5459"
+                                    onclick="changeDocument(this);">references</a></span> to:</p>
+                        <ul>
+                            <li>
+                                <p>Deval Patrick’s <em>TED </em>Talk</p>
+                            </li>
+                            <li>
+                                <p>the video: “Why do Americans love their flag?”</p>
+                            </li>
+                        </ul>
+                        <p><br></p>
+                        <p><strong>Materials</strong><br>Deval Patrick. <a pbyg-data-href-id="12393"
+                                href="assets/December_2023_Nonfiction-12393.pdf" target="_blank" rel="noopener"
+                                data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/NlgYId4CsRZNhvsi6Q38GQ/document/December 2023 Nonfiction.pdf">“A
+                                different understanding of American patriotism“</a>, a <em>TED </em>Talk, 2022</p>
+                        <p>“Why do Americans love their flag?“, a video from <em>YouTube</em> website, 2016</p>
+                        <div class="new-player mceNonEditable" contenteditable="false">
+                            <div class="new-player-video" style="width: 600px; height: 300px;"
+                                data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                    src="assets/Why-Americans-love-their-flag_19725-9818.mp4" pbyg-data-src-id="9818"
+                                    data-mce-src="https://xn--prvebyggeren-wjb.dk/webdav/-ffuqnR8rRlAkdLwFbds9Q/document/Why-Americans-love-their-flag_19725.mp4"></video>
+                            </div>
+                            <div class="subtitles new-player-subtitles" style="width: 600px;"
+                                data-mce-style="width: 600px;"><br></div>
+                            <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;">
+                                <div class="new-player-title"><br></div>
+                            </div>
+                        </div>
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                    <div class="web-document " id="web-document-5465">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 4A –
+                                Fiction</span></h2>
+                        <p>Write an analytical essay (900-1200 words) in which you analyse and interpret Alison Moore’s
+                            short story “The Voice of the People”.</p>
+                        <p>Part of your essay must focus on the setting of the story. In addition your essay must
+                            include an analysis of the style of writing in lines 110-122.</p>
+                        <p>Your essay must include <span style="text-decoration: underline;"
+                                data-mce-style="text-decoration: underline;"><a data-document-id="5459"
+                                    onclick="changeDocument(this);">references</a></span> to the short
+                            story.<strong></strong></p>
+                        <p><br data-mce-bogus="1"></p>
+                        <p><strong>Material</strong><br>Alison Moore. <a pbyg-data-href-id="11442"
+                                href="assets/December_2023_Fiction-11442.pdf" target="_blank" rel="noopener"
+                                data-mce-href="https://xn--prvebyggeren-wjb.dk/webdav/qc7BfJPkkRh1xXS2d43Nhg/document/December 2023 Fiction.pdf">”The
+                                Voice of the People”</a>, 2017</p>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br data-mce-bogus="1"></p>
+                        <p><br data-mce-bogus="1"></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5463">
+                        <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Assignment 4</span>
+                        </h2>
+                        <p><span>Answer 4A </span><strong>or</strong><span> 4B</span></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5462">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 3</span></h2>
+                        <p><strong>Videoen i denne opgave er lavet af Harvard Business School.</strong></p>
+                        <p><strong>Besvar både opgave a. og b. nedenfor.</strong><strong></strong></p>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>a. Find og skriv fra videoens lydside otte verballed i fem forskellige
+                                    tider.</strong></p>
+                        </ol>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;" start="2"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>b. Skriv for hvert verballed:</strong></p>
+                        </ol>
+                        <ul>
+                            <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                <ul>
+                                    <li><strong>hele verballeddet</strong></li>
+                                    <li><strong>verballeddets tid</strong></li>
+                                    <li><strong>hele subjektet</strong></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p><br></p>
+                        <p class="title style-scope ytd-video-primary-info-renderer"><yt-formatted-string
+                                force-default-style="" class="style-scope ytd-video-primary-info-renderer">"Celebrating
+                                the Harvard Business School Class of 2022", 2022</yt-formatted-string></p>
+                        <div class="new-player mceNonEditable" contenteditable="false" data-mce-selected="1">
+                            <div class="new-player-video" style="width: 600px; height: 300px;"
+                                data-mce-style="width: 600px; height: 300px;"><video width="600" height="300"
+                                    src="assets/19725_Celebrating_Harvard_BS_01-10509.mp4" pbyg-data-src-id="10509"
+                                    data-mce-src="https://xn--prvebyggeren-wjb.dk/webdav/mpajK0P7JGZo16ESYHd0TA/document/19725_Celebrating_Harvard_BS_01.mp4"></video>
+                            </div>
+                            <div class="subtitles new-player-subtitles" style="width: 600px;"
+                                data-mce-style="width: 600px;"><br></div>
+                            <div class="new-player-footer" style="width: 600px;" data-mce-style="width: 600px;"><br>
+                            </div>
+                        </div>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                    <div class="web-document " id="web-document-5461">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 2</span></h2>
+                        <p><strong>I tekststykket er en række ord og led understreget. Besvar opgave a., b. og c.
+                                nedenfor. Brug relevant grammatisk terminologi. Husk <span
+                                    style="text-decoration: underline;" data-mce-style="text-decoration: underline;"><a
+                                        data-document-id="5459"
+                                        onclick="changeDocument(this);">kildehenvisning</a></span>, hvis du citerer
+                                fra en grammatikbog. Skriv dine svar på dansk. </strong></p>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>a. Otte adjektiver og adverbier er understreget. Skriv for hvert
+                                    eksempel:</strong></p>
+                        </ol>
+                        <ul>
+                            <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                <ul>
+                                    <li><strong>om ordet er et adjektiv eller et adverbium</strong></li>
+                                    <li><strong>hvilken ordklasse ordet lægger sig til</strong></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;" start="2"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>b. Seks verballed er understreget. Skriv for hvert eksempel:</strong></p>
+                        </ol>
+                        <ul>
+                            <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                <ul>
+                                    <li><strong>hele verballeddet</strong></li>
+                                    <li><strong>hvilken tid verballeddet står i</strong></li>
+                                    <li><strong>om verballeddet er aktiv eller passiv</strong></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;" start="3"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>c. Fire eksempler på relative pronomener er understreget. Forklar for hvert
+                                    eksempel, hvorfor det pågældende pronomen er valgt.</strong></p>
+                        </ol>
+                        <p><strong>Teksten er et uddrag af en artikel.</strong></p>
+                        <table border="1" cellpadding="7"
+                            style="border-collapse: collapse; width: 100%; background-color: #ced4d9;"
+                            data-mce-style="border-collapse: collapse; width: 100%; background-color: #ced4d9;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 99.4186%;" data-mce-style="width: 99.4186%;">
+                                        <div class="line-numbers-container">
+                                            <p class="numbered-line">A writer like F. Scott Fitzgerald, <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">whose</span> life <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">can</span> almost <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">be said</span> to have
+                                                attracted more </p>
+                                            <p class="numbered-line">attention than his work, may have to wait a long
+                                                time before his <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">literary</span>
+                                                reputation finds </p>
+                                            <p class="numbered-line">its true level. Although <em>Tender Is the
+                                                    Night</em>, the novel Fitzgerald liked best of the four he </p>
+                                            <p class="numbered-line">published during his lifetime, <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">was</span> generally
+                                                <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">considered</span> a
+                                                failure when it first <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">appeared </span>
+                                            </p>
+                                            <p class="numbered-line">(even by Fitzgerald, <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">who</span> tried to
+                                                improve its standing by writing a revised version that </p>
+                                            <p class="numbered-line">nearly everybody agreed was much <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">worse</span>), it <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">has been</span> quietly
+                                                <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">assuming</span>, over
+                                                the
+                                            </p>
+                                            <p class="numbered-line">years, something like the status of an American
+                                                classic. Sales in the past twelve months </p>
+                                            <p class="numbered-line">exceeded five hundred and fifty thousand copies, or
+                                                about forty-five times the sale of </p>
+                                            <p class="numbered-line">the original edition. The book, <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">which</span> was out of
+                                                print when Fitzgerald died, in 1940, is </p>
+                                            <p class="numbered-line">now <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">available</span> in
+                                                four editions, and is <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">required</span> reading
+                                                in a large number of college </p>
+                                            <p class="numbered-line">courses in American literature. If many critics
+                                                still regard it as a failure, they now <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">tend</span> to </p>
+                                            <p class="numbered-line">see it as a noble failure, a flawed masterpiece,
+                                                and if they still complain that the </p>
+                                            <p class="numbered-line">disintegration of Dick Diver, its psychiatrist
+                                                hero, <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">is</span> never <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">satisfactorily</span>
+                                                <span style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">resolved</span>, most
+                                            </p>
+                                            <p class="numbered-line">of them concede that Diver is one of those rare
+                                                heroes in American fiction about <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">whom </span></p>
+                                            <p class="numbered-line">the reader <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">really</span> cares,
+                                                and that the account of his disintegration, <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">ambiguous</span> though
+                                                it </p>
+                                            <p class="numbered-line">may be, is <span
+                                                    style="text-decoration: underline;"
+                                                    data-mce-style="text-decoration: underline;">so</span> harrowing
+                                                that it makes the glittering perfection of plot in a novel like “The
+                                            </p>
+                                            <p class="numbered-line">Great Gatsby” seem almost too neat. </p>
+                                        </div>
+                                        <p style="text-align: right; font-size: 14px;"
+                                            data-mce-style="text-align: right; font-size: 14px;"><em>The New
+                                                Yorker</em>, 1962</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br data-mce-bogus="1"></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5460">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Assignment 1</span></h2>
+                        <p><strong>Besvar både opgave a. og b. nedenfor. Brug relevant grammatisk terminologi.
+                                Husk </strong><span style="text-decoration: underline;"
+                                data-mce-style="text-decoration: underline;"><a data-document-id="5459"
+                                    onclick="changeDocument(this);"><strong>kildehenvisning</strong></a></span><strong>,
+                                hvis du citerer fra en grammatikbog. Skriv dine svar på dansk.</strong></p>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>a. Find og skriv fra teksten:</strong></p>
+                        </ol>
+                        <ul>
+                            <li style="list-style-type: none;" data-mce-style="list-style-type: none;">
+                                <ul>
+                                    <li><strong>fire eksempler på omvendt ordstilling </strong></li>
+                                    <li><strong>to eksempler på ligefrem ordstilling</strong></li>
+                                    <li><strong>skriv for hvert eksempel hele subjektet og hele verballeddet</strong>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ol style="list-style-type: lower-alpha; font-weight: bold;" start="2"
+                            data-mce-style="list-style-type: lower-alpha; font-weight: bold;">
+                            <p><strong>b. Forklar kort, hvornår man anvender omvendt ordstilling. Inddrag de fire
+                                    eksempler på omvendt ordstilling i din forklaring.</strong></p>
+                        </ol>
+                        <p><strong>Teksten er et uddrag af en roman.</strong></p>
+                        <table border="1" cellpadding="7"
+                            data-mce-style="border-collapse: collapse; width: 100%; background-color: #ced4d9;"
+                            style="border-collapse: collapse; width: 100%; background-color: rgb(206, 212, 217);"
+                            data-mce-selected="1">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 99.4186%;" data-mce-style="width: 99.4186%;">
+                                        <div class="line-numbers-container">
+                                            <p class="numbered-line">"What train are you taking tomorrow, Camilla?" the
+                                                Countess of Simnel asked her </p>
+                                            <p class="numbered-line">daughter. </p>
+                                            <p class="numbered-line">"The two o'clock. I'm lunching with the Carstairs
+                                                woman first and we'll be travelling </p>
+                                            <p class="numbered-line">down together." </p>
+                                            <p class="numbered-line">"I see. Won't you find that rather dull?" </p>
+                                            <p class="numbered-line">Lady Camilla laughed. </p>
+                                            <p class="numbered-line">"I expect I shall," she said. "But I haven't any
+                                                choice. That's the train Uncle Tom has </p>
+                                            <p class="numbered-line">arranged to have met, and I can't afford to pay for
+                                                a taxi out from the station for myself, </p>
+                                            <p class="numbered-line">so that's the train I have to take. Anyhow,
+                                                travelling with her saves one the trouble of </p>
+                                            <p class="numbered-line">making conversation. One needn't listen to her,
+                                                either. So long as one looks intelligent, </p>
+                                            <p class="numbered-line">she'll go on talking all day about her marvellous
+                                                Alan without expecting one to </p>
+                                            <p class="numbered-line">answer." </p>
+                                            <p class="numbered-line">"Mrs. Carstairs," observed Lady Simple succinctly,
+                                                "is a bore. At the same time, there is </p>
+                                            <p class="numbered-line">something admirable in her devotion to her husband.
+                                                A woman is lucky who has found a </p>
+                                            <p class="numbered-line">purpose in life, as she has done." </p>
+                                            <p class="numbered-line">Lady Camilla said nothing, but the expression on
+                                                her handsome, intelligent face showed </p>
+                                            <p class="numbered-line">that she understood more in the words than their
+                                                surface meaning. </p>
+                                            <p class="numbered-line">"It will be chilly at Warbeck at this time of
+                                                year," her mother went on. "I hope you are </p>
+                                            <p class="numbered-line">taking plenty of warm things." </p>
+                                            <p class="numbered-line">"I'm taking everything I've got. And what's more, I
+                                                intend to wear it all. All at once. I shall </p>
+                                            <p class="numbered-line">positively bulge with clothes. I know what Warbeck
+                                                can be in a cold snap." </p>
+                                            <p class="numbered-line">"Don't you think you would be more comfortable
+                                                spending Christmas quietly with me in </p>
+                                            <p class="numbered-line">London?" </p>
+                                            <p class="numbered-line">Lady Camilla looked round the small, well-furnished
+                                                drawing-room of her mother's flat </p>
+                                            <p class="numbered-line">and smiled. </p>
+                                            <p class="numbered-line">"Much more comfortable, Mother dear," she agreed.
+                                            </p>
+                                        </div>
+                                        <p style="text-align: right; font-size: 14px;"
+                                            data-mce-style="text-align: right; font-size: 14px;">Cyril Hare, <em>An
+                                                English Murder</em>, 1951</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br data-mce-bogus="1"></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5464">
+                        <h2><span style="color: rgb(186, 55, 42);" data-mce-style="color: #ba372a;">Template</span></h2>
+                        <p></p>
+                        <p class="numbered-line"><span>Hent skabelonen til besvarelsen her.</span></p>
+                        <p><a pbyg-data-onclick-id="12394"
+                                onclick="window.open('assets/december 2023 template-12394.docx')"
+                                class="inserted-documents">Template</a></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5459">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Henvisninger til tekst,
+                                video- og lydklip</span></h2>
+                        <p>Hvis du citerer, skal du angive kilde.<br>Alt anvendt materiale skal være engelsksproget og
+                            angives med kildehenvisninger. Til forklaring af grammatiske opgaver kan materialerne være
+                            på dansk.<br>Du kan henvise til dele af video- og lydklip, f.eks. ved at angive afspillerens
+                            minut- og sekundtal for henholdsvis starten og slutningen af klippet.</p>
+                        <table border="1" cellpadding="7"
+                            style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;"
+                            data-mce-style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 99.4224%;" data-mce-style="width: 99.4224%;">
+                                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Generel
+                                                skabelon for henvisninger til tekster</span></h2>
+                                        <strong>Henvisninger</strong><br><span>Du henviser til tekster
+                                            ved </span><i>enten</i><span> 1) at angive linjenummeret eller
+                                            minuttalsangivelsen i en fodnote </span><i>eller</i><span> ved 2) at sætte
+                                            linjenummeret eller minuttalsangivelsen i parentes inde i din
+                                            tekst:</span><br><span>Ved én linje: l. 34</span><br><span>Ved flere linjer:
+                                            ll. 35-37</span><br><span>Ved minuttalsangivelse:
+                                            01:23-02:12</span><br><br><strong>I fodnoter
+                                            angives:</strong><br><strong>Opslag i bog</strong><br><span>“Hvad er et
+                                            ‘utælleligt ord’?”. Helle Brieghel og Dorthe Chalotte
+                                            Hansen. </span><i>Engelsk Grundgrammatik. Questions and Answers</i><span>.
+                                            Systime 2010. p. 47.</span><br><br><strong>Opslag i elektronisk
+                                            opslagsværk</strong><span></span><br><span>“Utællelige substantiver”. Thomas
+                                            Boesen og Sarah Barding. </span><i>Engram</i><span>. Minlaering 2019.
+                                            (www.minlaering.dk)</span><br><br><strong>Artikel fra bog eller
+                                            antologi</strong><br><span>“Post-Modernism”. Gitte Vest Barkholt and Jørgen
+                                            Døssing Jepsen. </span><i>A Short History of Literature in English. A
+                                            Handbook</i><span>. Systime 2010. pp. 79-93.</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Tekster i opgavesættet</span>
+                        </h2>
+                        <div>Teksternes ortografi og tegnsætning følger forlæggene. Trykfejl er dog
+                            rettet.<br>Opsætningen følger ikke nødvendigvis forlæggene. Dog følges forlægget nøje, hvor
+                            opsætningen på den ene eller anden måde indgår i opgaven.</div>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br data-mce-bogus="1"></p>
+                    </div>
+                    <div class="web-document " id="web-document-5457">
+                        <h2><span style="color: #ba372a;" data-mce-style="color: #ba372a;">Vejledning til
+                                opgavesættet</span></h2>
+                        <table border="1" cellpadding="7"
+                            style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;"
+                            data-mce-style="border-collapse: collapse; width: 99.9366%; background-color: #ced4d9;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 99.4224%;" data-mce-style="width: 99.4224%;">
+                                        <p><strong>Du skal besvare følgende opgaver:</strong></p>
+                                        <ul>
+                                            <li>Assignment 1-4</li>
+                                            <li>I assignment 4 skal du vælge <strong>enten </strong>4a <strong>eller
+                                                </strong>4b</li>
+                                        </ul>
+                                        <p><strong>Tekster til assignment 4:</strong></p>
+                                        <p>4A – Fiction:</p>
+                                        <p>“The Voice of the People“, a short story by Alison Moore, 2017.</p>
+                                        <p><br></p>
+                                        <p>4B – Non-fiction:</p>
+                                        <p><span>“A different understanding of American patriotism” a <em>TED </em>Talk
+                                                by Deval Patrick</span>, 2022.</p>
+                                        <p>“Why do Americans love their flag?“, a video from <em>YouTube</em> website,
+                                            2016.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Vejledning og skabelon til at løse opgaven</strong><span></span></p>
+                        <p>Den samlede eksaminationstid for assignment 1-4 er fem timer. Besvarelsen bedømmes som en
+                            helhed ud fra de faglige mål for niveauet. Der lægges vægt på beherskelsen af det engelske
+                            sprog, forståelse af forlægget og færdighed i skriftlig fremstilling på engelsk.<br><br>Det
+                            anbefales, at du skriver din besvarelse i skabelonen, som ligger under Template i menuen til
+                            venstre. Besvarelsen afleveres i ét dokument med opgaverne i rækkefølgen 1-4.</p>
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                    <div class="web-document frontpage-web-document web-document-active" id="web-document-5456">
+                        <div class="frontpage-fields">
+                            <h1 class="frontpage-proeve-title" contenteditable="false">Engelsk A</h1>
+                            <p class="frontpage-proeve-proeveordning" contenteditable="false"></p>
+                            <p class="frontpage-dato-for-afholdelse" contenteditable="false">Tirsdag den 12. december
+                                2023</p>
+                            <p class="frontpage-proeve-start-slut-tidspunkt" contenteditable="false"></p>
+                        </div>
+                        <p class="optional-textfield-1">Kl. 9.00-14.00</p>
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function resetWordCounters() {
+            var wordCounters = document.getElementsByClassName('word-counter')
+            Array.prototype.forEach.call(wordCounters, function (wordCounter) {
+                wordCounter.innerHTML = 0;
+            });
+        })();
+
+        function countWords(obj) {
+            let res = [];
+            let str = obj.value.replace(/[\t\n\r\.\?\!]/gm, ' ').split(' ');
+            str.map((s) => {
+                let trimStr = s.trim();
+                if (trimStr.length > 0) {
+                    res.push(trimStr);
+                }
+            });
+            obj.closest('.wordcount-textarea').getElementsByClassName('word-counter')[0].innerHTML = res.length;
+        }
+    </script>
+    <script>
+        function changeDocument(element) {
+            document.querySelectorAll(".web-document").forEach(element => {
+                if (element.classList.contains("web-document-active")) {
+                    element.classList.remove("web-document-active");
+                }
+            });
+            var webDocument = document.getElementById("web-document-" + element.getAttribute("data-document-id"));
+            if (!webDocument.classList.contains("web-document-active")) {
+                webDocument.classList.add("web-document-active");
+            }
+            this.changeActiveMenuLink(element.id);
+        }
+
+        function changeActiveMenuLink(elementId) {
+            document.querySelectorAll(".web-document-link").forEach(element => {
+                if (element.classList.contains("active")) {
+                    element.classList.remove("active");
+                }
+            });
+
+            var activeElement = document.getElementById(elementId);
+            if (!activeElement.classList.contains("active")) {
+                activeElement.classList.add("active");
+            }
+
+            var activeElementParentId = activeElement.getAttribute("data-document-id");
+            if (activeElement.hasAttribute("data-parent-document-id")) {
+                activeElementParentId = activeElement.getAttribute("data-parent-document-id");
+            }
+
+            document.querySelectorAll(".web-document-link").forEach(document => {
+                if (document.classList.contains("parent-document") || activeElementParentId == document.getAttribute("data-parent-document-id")) {
+                    document.classList.remove("noActiveRelation");
+                } else {
+                    document.classList.add("noActiveRelation");
+                }
+            });
+        }
+
+        VideoPlayer.InitPlayers('.web-document-active .new-player');
+        VideoPlayer.PauseAll();
+    </script>
+</body>
+
+</html>
