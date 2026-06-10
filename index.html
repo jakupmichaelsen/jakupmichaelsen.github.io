@@ -1,7 +1,561 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Small teaching tools, web apps, bookmarklets and workflow experiments by Jákup Michaelsen." />
+  <title>Teaching Tools · Jákup Michaelsen</title>
+  <style>
+    :root {
+      --bg: #282828;
+      --bg-soft: #32302f;
+      --bg-softer: #3c3836;
+      --surface: rgba(50, 48, 47, .82);
+      --surface-strong: rgba(60, 56, 54, .78);
+      --fg: #ebdbb2;
+      --muted: #a89984;
+      --yellow: #fabd2f;
+      --orange: #fe8019;
+      --green: #b8bb26;
+      --blue: #83a598;
+      --purple: #d3869b;
+      --red: #fb4934;
+      --border: #504945;
+      --shadow: rgba(0, 0, 0, .28);
+      --max: 1100px;
+    }
+
+    body.theme-nord {
+      --bg: #eceff4;
+      --bg-soft: #e5e9f0;
+      --bg-softer: #d8dee9;
+      --surface: rgba(229, 233, 240, .88);
+      --surface-strong: rgba(216, 222, 233, .82);
+      --fg: #2e3440;
+      --muted: #4c566a;
+      --yellow: #d08770;
+      --orange: #bf616a;
+      --green: #5e81ac;
+      --blue: #5e81ac;
+      --purple: #b48ead;
+      --red: #bf616a;
+      --border: #c3ccd8;
+      --shadow: rgba(46, 52, 64, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--fg);
+      background:
+        radial-gradient(circle at top left, rgba(131, 165, 152, .15), transparent 34rem),
+        radial-gradient(circle at top right, rgba(250, 189, 47, .10), transparent 28rem),
+        var(--bg);
+      font: 16px/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    a { color: var(--blue); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    a:hover { color: var(--yellow); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 2rem; }
+
+    header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow { color: var(--green); margin: 0 0 .6rem; }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(2.2rem, 7vw, 5.8rem);
+      letter-spacing: -.06em;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 1rem;
+      color: var(--yellow);
+    }
+
+    h3 { font-size: 1.1rem; }
+
+    .lead {
+      max-width: 760px;
+      margin: 1.4rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 2rem;
+    }
+
+    .theme-toggle {
+      margin-top: 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .theme-toggle button {
+      font: inherit;
+      color: var(--fg);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .35rem .7rem;
+      cursor: pointer;
+    }
+
+    .theme-toggle button[aria-pressed="true"] {
+      color: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    .pill, .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      border: 1px solid var(--border);
+      background: var(--surface-strong);
+      color: var(--fg);
+      border-radius: 999px;
+      padding: .45rem .75rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .pill:hover { border-color: var(--yellow); }
+
+    main { padding: 2.2rem 0 4rem; }
+    section { margin: 3rem 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      grid-column: span 6;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px var(--shadow);
+    }
+
+    .card.featured { grid-column: span 12; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: .7rem;
+    }
+
+    .repo-name { color: var(--fg); text-decoration: none; }
+    .repo-name:hover { color: var(--yellow); }
+
+    .desc { margin: .7rem 0; color: var(--muted); }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .tag { padding: .25rem .55rem; font-size: .82rem; color: var(--muted); }
+
+    .tag.teaching { color: var(--green); }
+    .tag.automation { color: var(--purple); }
+    .tag.grammar { color: var(--yellow); }
+    .tag.feedback { color: var(--orange); }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1rem;
+    }
+
+    .button {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .55rem .75rem;
+      color: var(--fg);
+      background: var(--bg-softer);
+      text-decoration: none;
+    }
+
+    .button.primary { border-color: var(--yellow); color: var(--yellow); }
+    .button:hover { transform: translateY(-1px); }
+
+    .note {
+      border-left: 3px solid var(--orange);
+      padding: .9rem 1rem;
+      background: rgba(254, 128, 25, .08);
+      color: var(--muted);
+    }
+
+    .theme-swatch {
+      display: flex;
+      gap: .4rem;
+      margin: 1rem 0 .5rem;
+    }
+
+    .theme-swatch span {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+
+    .gruvbox-1 { background: #282828; }
+    .gruvbox-2 { background: #ebdbb2; }
+    .gruvbox-3 { background: #fabd2f; }
+    .gruvbox-4 { background: #83a598; }
+    .nord-1 { background: #eceff4; }
+    .nord-2 { background: #2e3440; }
+    .nord-3 { background: #5e81ac; }
+    .nord-4 { background: #88c0d0; }
+
+
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(var(--reveal-x, 0), 18px, 0);
+      transition: opacity .72s ease, transform .72s cubic-bezier(.2, .8, .2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    .terminal {
+      padding: 1rem;
+      border-radius: 16px;
+      background: #1d2021;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      color: var(--green);
+    }
+
+    body.theme-nord .terminal { background: #e5e9f0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .small { color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 760px) {
+      .wrap { padding: 1.2rem; }
+      header { padding-top: 2.6rem; }
+      .card, .card.featured { grid-column: span 12; }
+      .card-head { display: block; }
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">~/teaching-tools</p>
+      <h1>I teach English online and build the tools I wish existed.</h1>
+      <p class="lead">
+        A public workbench of web apps, browser extensions, bookmarklet-style helpers,
+        syntax tools, transcription workflows and feedback systems built from real teaching problems.
+      </p>
+      <nav class="nav" aria-label="Sections">
+        <a class="pill" href="#featured">featured</a>
+        <a class="pill" href="#repos">public repos</a>
+        <a class="pill" href="#themes">themes</a>
+        <a class="pill" href="#principles">principles</a>
+        <a class="pill" href="https://github.com/jakupmichaelsen">github</a>
+      </nav>
+      <div class="theme-toggle" aria-label="Theme switcher">
+        <span>palette:</span>
+        <button type="button" data-theme="gruvbox" aria-pressed="true">gruvbox</button>
+        <button type="button" data-theme="nord" aria-pressed="false">nord</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="featured">
+        <h2>Featured teaching/workflow tools</h2>
+        <div class="grid" id="featured-grid"></div>
+      </section>
+
+      <section id="themes">
+        <h2>Visual themes</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Gruvbox by default</h3>
+            <div class="theme-swatch" aria-label="Gruvbox color sample">
+              <span class="gruvbox-1"></span><span class="gruvbox-2"></span><span class="gruvbox-3"></span><span class="gruvbox-4"></span>
+            </div>
+            <p class="desc">Warm, terminal-like and a little rough around the edges — a comfortable palette for focused writing, feedback and low-friction tool building.</p>
+          </article>
+          <article class="card">
+            <h3>Nord for light mode</h3>
+            <div class="theme-swatch" aria-label="Nord color sample">
+              <span class="nord-1"></span><span class="nord-2"></span><span class="nord-3"></span><span class="nord-4"></span>
+            </div>
+            <p class="desc">Clean, pale and readable — the white-mode counterpart for pages and tools that need to feel calm in a browser tab.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="principles">
+        <h2>Design principles</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Keep teacher attention on the student</h3>
+            <p class="desc">Tools should reduce clicking, tab switching and copying, so more energy stays with feedback, language and assessment.</p>
+          </article>
+          <article class="card">
+            <h3>Prefer portable formats</h3>
+            <p class="desc">Markdown, HTML, SRT, JSON and plain files are easier to inspect, archive, revise and move between systems.</p>
+          </article>
+          <article class="card">
+            <h3>Build from friction</h3>
+            <p class="desc">The best tool ideas come from repeated irritation: slow grading pages, awkward audio handling, messy transcripts and hard-to-edit feedback.</p>
+          </article>
+          <article class="card">
+            <h3>Protect student data</h3>
+            <p class="desc">Public demos should use fictional data. Tools for internal school systems belong in private workflows, not public screenshots or logs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="repos">
+        <h2>Public repositories</h2>
+        <p class="small">Loaded from the public GitHub API. If the API is unavailable, this page falls back to a small curated list.</p>
+        <div class="grid" id="repo-grid"></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Built by <a href="https://github.com/jakupmichaelsen">Jákup Michaelsen</a>. Public project data is read from GitHub.</p>
+    </footer>
+  </div>
+
+  <script>
+    const username = 'jakupmichaelsen';
+
+    const featuredCopy = {
+      'text-annotate': {
+        title: 'textAnnotate',
+        category: ['feedback', 'annotation', 'Svelte'],
+        summary: 'A focused markdown annotation editor for ESL teacher feedback: mark phrases, attach comments, review by category, and export portable feedback.',
+        live: 'https://text-annotate.vercel.app/'
+      },
+      'GradeMe': {
+        title: 'GradeMe Dashboard',
+        category: ['feedback', 'extension', 'Moodle'],
+        summary: 'A browser extension that turns Moodle Grade-Me blocks into a faster dashboard for opening feedback pages and downloading submissions.'
+      },
+      'wTranscribe': {
+        title: 'wTranscribe',
+        category: ['automation', 'transcription', 'Playwright'],
+        summary: 'A command-line workflow that automates Word Online transcription and exports editable transcript documents.'
+      },
+      'verbal-studio': {
+        title: 'verbalStudio',
+        category: ['audio', 'assessment', 'Rust TUI'],
+        summary: 'A keyboard-first terminal prototype for oral presentation assessment: requirements, transcript evidence, teacher notes and feedback export.'
+      },
+      'syntaks': {
+        title: 'syntaks',
+        category: ['grammar', 'syntax trees', 'JavaScript'],
+        summary: 'A fork/workbench for drawing syntax trees and experimenting with grammar teaching interfaces.'
+      },
+      'AI-Act-Explorer': {
+        title: 'AI Act Explorer',
+        category: ['learning', 'web app', 'AI Act'],
+        summary: 'A web app for exploring and learning the EU AI Act.'
+      }
+    };
+
+    const fallbackRepos = [
+      { name: 'text-annotate', html_url: 'https://github.com/jakupmichaelsen/text-annotate', description: 'Focused markdown annotation editor for ESL teacher feedback workflows.', language: 'Svelte', updated_at: '2026-06-10T00:00:00Z' },
+      { name: 'GradeMe', html_url: 'https://github.com/jakupmichaelsen/GradeMe', description: 'Browser extension for Moodle Grade Me Blocks.', language: 'JavaScript', updated_at: '2026-06-04T00:00:00Z' },
+      { name: 'wTranscribe', html_url: 'https://github.com/jakupmichaelsen/wTranscribe', description: 'Automated transcription using Word Online.', language: 'JavaScript', updated_at: '2026-06-09T00:00:00Z' },
+      { name: 'verbal-studio', html_url: 'https://github.com/jakupmichaelsen/verbal-studio', description: 'TUI for audio annotation.', language: 'Rust', updated_at: '2026-05-03T00:00:00Z' },
+      { name: 'syntaks', html_url: 'https://github.com/jakupmichaelsen/syntaks', description: 'A web app for drawing syntax trees.', language: 'JavaScript', updated_at: '2026-06-10T00:00:00Z' },
+      { name: 'AI-Act-Explorer', html_url: 'https://github.com/jakupmichaelsen/AI-Act-Explorer', description: 'Web app to help master the EU AI Act.', language: 'JavaScript', updated_at: '2026-04-28T00:00:00Z' }
+    ];
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>'"]/g, char => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+      }[char]));
+    }
+
+    function formatDate(value) {
+      if (!value) return 'unknown';
+      return new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(value));
+    }
+
+    function tagHtml(tags = []) {
+      return tags.map(tag => `<span class="tag ${tagClass(tag)}">${escapeHtml(tag)}</span>`).join('');
+    }
+
+    function tagClass(tag) {
+      const t = tag.toLowerCase();
+      if (t.includes('feedback') || t.includes('annotation')) return 'feedback';
+      if (t.includes('automation') || t.includes('transcription')) return 'automation';
+      if (t.includes('grammar') || t.includes('syntax')) return 'grammar';
+      if (t.includes('teaching') || t.includes('assessment')) return 'teaching';
+      return '';
+    }
+
+    function renderFeatured(repos) {
+      const grid = document.querySelector('#featured-grid');
+      const featured = repos.filter(repo => featuredCopy[repo.name]);
+      grid.innerHTML = featured.map((repo, index) => {
+        const copy = featuredCopy[repo.name];
+        const title = copy.title || repo.name;
+        const summary = copy.summary || repo.description || 'Public repository.';
+        const live = copy.live ? `<a class="button primary" href="${copy.live}">open app</a>` : '';
+        return `
+          <article class="card featured" data-reveal-index="${index}">
+            <div class="card-head">
+              <div>
+                <h3><a class="repo-name" href="${repo.html_url}">${escapeHtml(title)}</a></h3>
+                <div class="meta">${tagHtml(copy.category)} ${repo.language ? `<span class="tag">${escapeHtml(repo.language)}</span>` : ''}</div>
+              </div>
+              <span class="small">updated ${formatDate(repo.updated_at)}</span>
+            </div>
+            <p class="desc">${escapeHtml(summary)}</p>
+            <div class="actions">
+              ${live}
+              <a class="button" href="${repo.html_url}">view source</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderRepos(repos) {
+      const grid = document.querySelector('#repo-grid');
+      grid.innerHTML = repos.map((repo, index) => `
+        <article class="card" data-reveal-index="${index}">
+          <div class="card-head">
+            <h3><a class="repo-name" href="${repo.html_url}">${escapeHtml(repo.name)}</a></h3>
+            <span class="small">${repo.language ? escapeHtml(repo.language) : 'repo'}</span>
+          </div>
+          <p class="desc">${escapeHtml(repo.description || 'No public description yet.')}</p>
+          <div class="meta">
+            <span class="tag">updated ${formatDate(repo.updated_at)}</span>
+            ${repo.fork ? '<span class="tag">fork</span>' : ''}
+            ${repo.archived ? '<span class="tag">archived</span>' : ''}
+          </div>
+        </article>
+      `).join('');
+    }
+
+
+    let revealObserver;
+
+    function setupReveal() {
+      const cards = [...document.querySelectorAll('.card')];
+      const viewportMid = window.innerWidth / 2;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const center = rect.left + rect.width / 2;
+        const direction = Math.abs(center - viewportMid) < 80
+          ? (index % 2 === 0 ? -1 : 1)
+          : (center < viewportMid ? -1 : 1);
+
+        card.classList.add('reveal');
+        card.style.setProperty('--reveal-x', `${direction * 42}px`);
+      });
+
+      if (revealObserver) revealObserver.disconnect();
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+      cards.forEach(card => revealObserver.observe(card));
+    }
+
+    function setTheme(theme) {
+      const useNord = theme === 'nord';
+      document.body.classList.toggle('theme-nord', useNord);
+      document.querySelectorAll('[data-theme]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.theme === theme));
+      });
+      localStorage.setItem('teaching-tools-theme', theme);
+    }
+
+    document.querySelectorAll('[data-theme]').forEach(button => {
+      button.addEventListener('click', () => setTheme(button.dataset.theme));
+    });
+
+    setTheme(localStorage.getItem('teaching-tools-theme') || 'gruvbox');
+
+    async function loadRepos() {
+      try {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, {
+          headers: { 'Accept': 'application/vnd.github+json' }
+        });
+        if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
+        const repos = await res.json();
+        const publicRepos = repos
+          .filter(repo => !repo.private)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        renderFeatured(publicRepos);
+        renderRepos(publicRepos);
+        requestAnimationFrame(setupReveal);
+      } catch (error) {
+        console.warn('Falling back to embedded repository list:', error);
+        renderFeatured(fallbackRepos);
+        renderRepos(fallbackRepos);
+        requestAnimationFrame(setupReveal);
+      }
+    }
+
+    requestAnimationFrame(setupReveal);
+    loadRepos();
+  </script>
 </body>
 </html>
